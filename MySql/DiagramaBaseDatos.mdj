@@ -40,7 +40,7 @@
 									"top": 13,
 									"width": 269.3193359375,
 									"height": 13,
-									"text": "calendario"
+									"text": "disponibilidad"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -1400,7 +1400,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "calendario",
+					"name": "disponibilidad",
 					"columns": [
 						{
 							"_type": "ERDColumn",
