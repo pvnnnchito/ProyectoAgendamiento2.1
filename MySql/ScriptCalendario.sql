@@ -15,7 +15,7 @@ CREATE TABLE clientes(
     correo varchar(128) NOT NULL
 );
 
---CREANDO TABLA empleados
+-- CREANDO TABLA empleados
 CREATE TABLE empleados(
     id int primary key NOT NULL auto_increment,
     nombre varchar(64) NOT NULL,
@@ -30,6 +30,30 @@ CREATE TABLE servicios(
 );
 
 -- LUEGO EMPEZAMOS CON LAS TABLAS QUE TIENEN LLAVES FORANEAS
+
+
+-- CREANDO TABLA citas
+CREATE TABLE citas(
+    id int PRIMARY KEY NOT NULL,
+    fecha_creacion  TIMESTAMP NOT NULL,
+    cliente_id  INTEGER,
+    empleado_id  INTEGER,
+    nombre_cliente  VARCHAR(30) NOT NULL,
+    contacto_cliente  VARCHAR(30) NOT NULL,
+    hora_inicio  TIMESTAMP NOT NULL,
+    hora_termino  TIMESTAMP NOT NULL,
+    cancelado  BOOLEAN NOT NULL
+);
+
+-- AGREGANDO FK de citas
+ALTER TABLE citas
+ADD CONSTRAINT FK_cliente_id
+FOREIGN KEY (cliente_id) REFERENCES clientes(id);
+
+ALTER TABLE citas
+ADD CONSTRAINT FK_empleado_id
+FOREIGN KEY (empleado_id) REFERENCES empleados(id);
+
 
 -- CREANDO TABLA disponibilidades
 CREATE TABLE disponibilidades(
@@ -51,11 +75,11 @@ CREATE TABLE servicios_agendados(
 );
 -- AGREGANDO FK servicios_agendados
 ALTER TABLE servicios_agendados
-ADD CONSTRAINT FK_citas_id
+ADD CONSTRAINT FK_citas_servicios_agendados_id
 FOREIGN KEY (citas_id) REFERENCES citas(id);
 
 ALTER TABLE servicios_agendados
-ADD CONSTRAINT FK_servicio_id
+ADD CONSTRAINT FK_servicio_agendado_id
 FOREIGN KEY (servicio_id) REFERENCES servicios(id);
 
 -- CREANDO TABLA servicios_ofrecidos
@@ -67,34 +91,10 @@ CREATE TABLE servicios_ofrecidos(
 
 -- AGREGANDO FK de servicios_ofrecidos
 ALTER TABLE servicios_ofrecidos
-ADD CONSTRAINT FK_citas_id
+ADD CONSTRAINT FK_citas_servicios_ofrecidos_id
 FOREIGN KEY (citas_id) REFERENCES citas(id);
 
 ALTER TABLE servicios_ofrecidos
-ADD CONSTRAINT FK_servicio_id
+ADD CONSTRAINT FK_servicio_ofrecido_id
 FOREIGN KEY (servicio_id) REFERENCES servicios(id);
-
-
--- CREANDO TABLA citas
-CREATE TABLE citas(
-    id int PRIMARY KEY NOT NULL,
-    fecha_creacion  TIMESTAMP NOT NULL,
-    cliente_id  INTEGER,
-    empleado_id  INTEGER,
-    nombre_cliente  VARCHAR(30) NOT NULL,
-    contacto_cliente  VARCHAR(30) NOT NULL,
-    hora_inicio  TIMESTAMP NOT NULL,
-    hora_termino  TIMESTAMP NOT NULL,
-    cancelado  BOOLEAN NOT NULL,
-);
-
--- AGREGANDO FK de citas
-ALTER TABLE citas
-ADD CONSTRAINT FK_cliente_id
-FOREIGN KEY (cliente_id) REFERENCES clientes(id);
-
-ALTER TABLE citas
-ADD CONSTRAINT FK_empleado_id
-FOREIGN KEY (empleado_id) REFERENCES empleados(id);
-
 
