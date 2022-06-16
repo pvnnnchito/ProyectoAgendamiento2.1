@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 //@Entity
 //@Table(name="usuarios")
-public class Calendario {
+public class Disponibilidad {
 
     //ATRIBUTOS
     private int id;
@@ -13,10 +13,10 @@ public class Calendario {
     private Timestamp tiempoFinal;
 
     //CONSTRUCTORES
-    public Calendario() {
+    public Disponibilidad() {
     }
 
-    public Calendario(int id, int empleado_id, Timestamp tiempoInicio, Timestamp tiempoFinal) {
+    public Disponibilidad(int id, int empleado_id, Timestamp tiempoInicio, Timestamp tiempoFinal) {
         this.id = id;
         this.empleado_id = empleado_id;
         this.tiempoInicio = tiempoInicio;
