@@ -85,7 +85,7 @@ CREATE TABLE citas(
     contacto_cliente  VARCHAR(30) NOT NULL,
     hora_inicio  TIMESTAMP NOT NULL,
     hora_termino  TIMESTAMP NOT NULL,
-    cancelado  BOOLEAN NOT NULL,
+    cancelado BOOLEAN NOT NULL
 );
 
 -- AGREGANDO FK de citas
