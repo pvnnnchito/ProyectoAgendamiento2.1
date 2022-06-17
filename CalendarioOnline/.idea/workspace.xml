@@ -7,7 +7,10 @@
     <list default="true" id="b8775b8c-4cf1-4204-81ab-d2df3ad41657" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../ProyectoAgendamiento/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoAgendamiento/.idea/misc.xml" afterDir="false" />
+=======
+>>>>>>> 1d594360a2131b6c6d133184c87f31e170144ca0
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +59,12 @@
       <option name="presentableId" value="Default" />
       <updated>1654622081943</updated>
       <workItem from="1654622083768" duration="614000" />
+<<<<<<< HEAD
       <workItem from="1655302321197" duration="4684000" />
       <workItem from="1655318254139" duration="1421000" />
+=======
+      <workItem from="1655302321197" duration="5499000" />
+>>>>>>> 1d594360a2131b6c6d133184c87f31e170144ca0
     </task>
     <servers />
   </component>
