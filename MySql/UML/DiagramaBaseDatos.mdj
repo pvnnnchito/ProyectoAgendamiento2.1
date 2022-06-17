@@ -40,7 +40,7 @@
 									"top": 13,
 									"width": 269.3193359375,
 									"height": 13,
-									"text": "disponibilidad"
+									"text": "disponibilidades"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -153,7 +153,7 @@
 									"top": 13,
 									"width": 283.296875,
 									"height": 13,
-									"text": "empleado"
+									"text": "empleados"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -251,7 +251,7 @@
 									"top": 13,
 									"width": 274.6259765625,
 									"height": 13,
-									"text": "cliente"
+									"text": "clientes"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -552,7 +552,7 @@
 									"top": 445,
 									"width": 177.3798828125,
 									"height": 13,
-									"text": "servicio_ofrecido"
+									"text": "servicios_ofrecidos"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -650,7 +650,7 @@
 									"top": 437,
 									"width": 177.3798828125,
 									"height": 13,
-									"text": "servicio_agendado"
+									"text": "servicios_agendados"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -748,7 +748,7 @@
 									"top": 557,
 									"width": 242.86865234375,
 									"height": 13,
-									"text": "service"
+									"text": "servicios"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -1400,7 +1400,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "disponibilidad",
+					"name": "disponibilidades",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -1452,7 +1452,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "empleado",
+					"name": "empleados",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -1636,7 +1636,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "cliente",
+					"name": "clientes",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -1910,7 +1910,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "servicio_ofrecido",
+					"name": "servicios_ofrecidos",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -1953,7 +1953,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "servicio_agendado",
+					"name": "servicios_agendados",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -1996,7 +1996,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "service",
+					"name": "servicios",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
