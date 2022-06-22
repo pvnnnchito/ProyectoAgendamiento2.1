@@ -1,30 +1,35 @@
 package com.equipo1.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name="empleados")
 public class Empleado {
 
     //ATRIBUTOS
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
+    @Size(min=4, max=15)
     private String nombre;
+    @NotNull
+    @Size(min=4, max=15)
     private String apellido;
 
+
     //CONSTRUCTORES
+
     public Empleado() {
     }
 
-    public Empleado(int id, String nombre, String apellido) {
-        this.id = id;
+    public Empleado(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
-    }
-
-    //GETTER Y SETTER
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -43,7 +48,13 @@ public class Empleado {
         this.apellido = apellido;
     }
 
+    public Long getId() {
+        return id;
+    }
 
-    //FUNCIONES
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
 }

@@ -1,0 +1,22 @@
+package com.equipo1.services;
+
+import com.equipo1.models.Empleado;
+import com.equipo1.repositories.EmpleadoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EmpleadoService {
+    @Autowired
+    EmpleadoRepository empleadoRepository;
+
+    public void registroEmpleado(Empleado empleado) {
+        empleadoRepository.save(empleado);
+    }
+
+    public List<Empleado> findAll() {
+        return empleadoRepository.findAll();
+    }
+}

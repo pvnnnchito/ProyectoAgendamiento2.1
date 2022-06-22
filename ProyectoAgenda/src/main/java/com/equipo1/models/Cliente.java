@@ -1,5 +1,9 @@
 package com.equipo1.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
 public class Cliente {
 
 		/* id int PK
