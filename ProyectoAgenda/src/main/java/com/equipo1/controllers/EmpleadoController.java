@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -49,6 +50,39 @@ public class EmpleadoController {
          model.addAttribute("empleadosCapturados", listaEmpleados);
          return "mostrarEmpleado.jsp";
      }
+
+     @RequestMapping("/editar/{id}")
+    public String editar(@PathVariable("id")Long id, Model model){
+         Empleado empleado = empleadoService.buscarId(id);
+         model.addAttribute("empleado",empleado);
+         return "editarEmpleado.jsp";
+     }
+     @RequestMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable("id")Long id,Model model){
+         empleadoService.eliminarId(id);
+         return "redirect:/empleado/mostrar";
+     }
+
+
+    @PostMapping("/actualizar/{id}")
+    public String actualizarEmpleado(@PathVariable("id") Long id, @Valid @ModelAttribute("empleado") Empleado empleado,
+                                     BindingResult resultado,
+                                     Model model) {
+
+        if(resultado.hasErrors()) {
+            model.addAttribute("msgError","Datos erroneos");
+            return "editarEmpleado.jsp";
+        }else {
+            empleado.setId(id); //-> agregar el id al objeto
+
+            //enviamos el obeto a persistir en base datos
+            empleadoService.guardarEmpleado(empleado);
+
+            return "redirect:/empleado/mostrar";
+        }
+    }
+
+
 
 
 

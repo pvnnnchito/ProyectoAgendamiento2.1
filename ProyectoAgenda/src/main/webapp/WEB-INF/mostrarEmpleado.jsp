@@ -11,8 +11,36 @@
 <html>
 <head>
     <title>Mostrar Empleados</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
 </head>
 <body>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="empleado" items="${empleadosCapturados}" >
+            <tr>
+                <th>id</th>
+                <th scope="row">${empleado.id}</th>
+                <td>${empleado.nombre}</td>
+                <td>${empleado.apellido}</td>
+                <td><a class="btn btn-warning" href="/empleado/editar/${empleado.id}" role="button">Editar</a></td>
+                <td><a class="btn btn-danger" href="/empleado/eliminar/${empleado.id}" role="button">Eliminar</a></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

@@ -15,6 +15,9 @@
 </head>
 <body>
 <div>
+    <c:if test="${msgError != null}">
+        <c:out value="${msgError}"></c:out>
+    </c:if>
     <%--@elvariable id="empleado" type="Java"--%>
     <form:form action="/empleado/guardar" method="post" modelAttribute="empleado">
         <form:label path="nombre">Nombre:</form:label>
