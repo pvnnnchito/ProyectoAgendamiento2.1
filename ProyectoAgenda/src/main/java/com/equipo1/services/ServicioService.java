@@ -1,11 +1,5 @@
 package com.equipo1.services;
 
-<<<<<<< HEAD
-import org.springframework.stereotype.Service;
-
-@Service
-public class ServicioService {
-=======
 import com.equipo1.models.Servicio;
 import com.equipo1.repositories.ServicioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +22,4 @@ public class ServicioService {
     public List<Servicio> findAll() {
         return servicioRepository.findAll();
     }
->>>>>>> LuisMejias
 }

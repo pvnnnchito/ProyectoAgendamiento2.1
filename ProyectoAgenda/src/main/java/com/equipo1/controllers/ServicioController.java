@@ -1,11 +1,5 @@
 package com.equipo1.controllers;
 
-<<<<<<< HEAD
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class ServicioController {
-=======
 import com.equipo1.models.Servicio;
 import com.equipo1.services.ServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +56,4 @@ public class ServicioController {
         model.addAttribute("sserviciosRegistrados",listaServicios);
         return "serviciosRegistrados.jsp";
     }
-
->>>>>>> LuisMejias
 }
