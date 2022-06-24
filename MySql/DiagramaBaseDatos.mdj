@@ -40,7 +40,7 @@
 									"top": 13,
 									"width": 269.3193359375,
 									"height": 13,
-									"text": "calendario"
+									"text": "agendamiento"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -1400,7 +1400,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
-					"name": "calendario",
+					"name": "agendamiento",
 					"columns": [
 						{
 							"_type": "ERDColumn",
