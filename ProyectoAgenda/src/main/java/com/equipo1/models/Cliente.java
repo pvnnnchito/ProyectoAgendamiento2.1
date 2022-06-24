@@ -1,6 +1,20 @@
 package com.equipo1.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.lang.NonNull;
+
+@Entity
+@Table(name="clientes")
 public class Cliente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 		/* id int PK
 		 * nombre varchar (50)
@@ -9,9 +23,16 @@ public class Cliente {
 		 */
 
 	//atributos
-	private int id;//PK //no sé si debe ser int o Integer
+	//PK //no sé si debe ser int o Integer
+	private Long id;
+	@NotNull
+	@Size(min=4, max=40)
 	private String nombre; //en base de datos, string es un varchar, no sé si se pueden escribir límites de caracteres
+	@NotNull
+	@Size(min=4, max=15)
 	private String telefono;
+	@NotNull
+	@Size(min=4, max=20)
 	private String correo;
 	
 	//constructor vacio
@@ -19,22 +40,11 @@ public class Cliente {
 		super();
 	}
 
-	//constructor lleno
-	public Cliente(int id, String nombre, String telefono, String correo) {
-		super();
-		this.id = id;
+	//Constructores
+	public Cliente(String nombre, String telefono, String correo) {
 		this.nombre = nombre;
 		this.telefono = telefono;
 		this.correo = correo;
-	}
-
-	//getters y setters
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getNombre() {
@@ -60,6 +70,16 @@ public class Cliente {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	
 
 
 }
