@@ -97,4 +97,3 @@ FOREIGN KEY (citas_id) REFERENCES citas(id);
 ALTER TABLE servicios_ofrecidos
 ADD CONSTRAINT FK_servicio_ofrecido_id
 FOREIGN KEY (servicio_id) REFERENCES servicios(id);
-
