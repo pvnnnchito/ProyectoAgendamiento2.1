@@ -1,10 +1,15 @@
 package com.equipo1.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="servicios")
 public class Servicio {
 
     //Atributos
-
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombreServicio;
     private int duracion;
 
@@ -17,31 +22,29 @@ public class Servicio {
 
     //constructor con parámetros
 
-
-    public Servicio(int id, String nombreServicio, int duracion) {
-        super();
+    public Servicio(Long id, String nombreServicio, int duracion) {
         this.id = id;
         this.nombreServicio = nombreServicio;
         this.duracion = duracion;
     }
 
+
     //Getter & Setter
 
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNombre_servicio() {
+    public String getNombreServicio() {
         return nombreServicio;
     }
 
-    public void setNombre_servicio(String nombre_servicio) {
-        this.nombreServicio = nombre_servicio;
+    public void setNombreServicio(String nombreServicio) {
+        this.nombreServicio = nombreServicio;
     }
 
     public int getDuracion() {
@@ -51,6 +54,7 @@ public class Servicio {
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
 
     //Función(?)
 
