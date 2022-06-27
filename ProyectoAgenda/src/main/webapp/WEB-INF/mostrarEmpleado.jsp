@@ -27,7 +27,6 @@
             <th scope="col">Apellido</th>
         </tr>
         </thead>
-        <tbody>
         <c:forEach var="empleado" items="${empleadosCapturados}" >
             <tr>
                 <th>id</th>
@@ -38,7 +37,7 @@
                 <td><a class="btn btn-danger" href="/empleado/eliminar/${empleado.id}" role="button">Eliminar</a></td>
             </tr>
         </c:forEach>
-        </tbody>
+
     </table>
 </div>
 

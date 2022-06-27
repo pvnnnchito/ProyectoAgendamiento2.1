@@ -63,24 +63,24 @@ public class EmpleadoController {
          return "redirect:/empleado/mostrar";
      }
 
+     @PostMapping("/actualizar/{id}")
+    public String actualizarEmpleado(@PathVariable("id")Long id,
+                                     @Valid @ModelAttribute("empleado") Empleado empleado,
+                                     BindingResult result,
+                                     Model model){
+         if(result.hasErrors()){
+             model.addAttribute("msgError","Datos Erroneos");
+                     return "editarEmpleados.jsp";
+         }else{
+             empleado.setId(id);
+             empleadoService.registroEmpleado(empleado);
+             return"redirect:/empleado/mostrar";
+         }
 
-    @PostMapping("/actualizar/{id}")
-    public String actualizarEmpleado(@PathVariable("id") Long id, @Valid @ModelAttribute("empleado") Empleado empleado,
-                                     BindingResult resultado,
-                                     Model model) {
+     }
 
-        if(resultado.hasErrors()) {
-            model.addAttribute("msgError","Datos erroneos");
-            return "editarEmpleado.jsp";
-        }else {
-            empleado.setId(id); //-> agregar el id al objeto
 
-            //enviamos el obeto a persistir en base datos
-            empleadoService.guardarEmpleado(empleado);
 
-            return "redirect:/empleado/mostrar";
-        }
-    }
 
 
 
