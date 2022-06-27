@@ -1,5 +1,6 @@
 package com.equipo1.services;
 
+<<<<<<< HEAD
 import com.equipo1.models.Empleado;
 import com.equipo1.repositories.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,10 @@ public class EmpleadoService {
     }
 
 
+=======
+import org.springframework.stereotype.Service;
+
+@Service
+public class EmpleadoService {
+>>>>>>> franciscoCid
 }

@@ -1,5 +1,6 @@
 package com.equipo1.controllers;
 
+<<<<<<< HEAD
 import com.equipo1.models.Empleado;
 import com.equipo1.services.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,4 +90,10 @@ public class EmpleadoController {
 
 
 
+=======
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class EmpleadoController {
+>>>>>>> franciscoCid
 }

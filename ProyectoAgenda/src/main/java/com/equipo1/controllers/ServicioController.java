@@ -56,5 +56,4 @@ public class ServicioController {
         model.addAttribute("sserviciosRegistrados",listaServicios);
         return "serviciosRegistrados.jsp";
     }
-
 }
