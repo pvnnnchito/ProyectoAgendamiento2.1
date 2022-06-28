@@ -1,6 +1,5 @@
 package com.equipo1.controllers;
 
-<<<<<<< HEAD
 import com.equipo1.models.Empleado;
 import com.equipo1.services.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,79 +20,71 @@ public class EmpleadoController {
     @Autowired
     EmpleadoService empleadoService;
 
-     @RequestMapping("")
-    public String inicioEmpleado(@ModelAttribute("empleado")Empleado empleado){
-         return "empleado.jsp";
-     }
+    @RequestMapping("")
+    public String inicioEmpleado(@ModelAttribute("empleado") Empleado empleado) {
+        return "empleado.jsp";
+    }
 
-     @PostMapping("/guardar")
-    public String guardarEmpleado(@Valid @ModelAttribute("empleado")Empleado empleado,
-                                   BindingResult result,
-                                   Model model){
-         if (result.hasErrors()){
-             model.addAttribute("msgError", "Debe ingresar los datos correctamente");
-             return "empleado.jsp";
+    @PostMapping("/guardar")
+    public String guardarEmpleado(@Valid @ModelAttribute("empleado") Empleado empleado,
+                                  BindingResult result,
+                                  Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("msgError", "Debe ingresar los datos correctamente");
+            return "empleado.jsp";
 
-         }else{
-             empleadoService.registroEmpleado(empleado);
+        } else {
+            empleadoService.registroEmpleado(empleado);
 
-             List<Empleado> listaEmpleados = empleadoService.findAll();
-             model.addAttribute("empleadosCapturados", listaEmpleados);
-             return "mostrarEmpleado.jsp";
-         }
+            List<Empleado> listaEmpleados = empleadoService.findAll();
+            model.addAttribute("empleadosCapturados", listaEmpleados);
+            return "mostrarEmpleado.jsp";
+        }
 
 
-     }
+    }
 
-     @RequestMapping("/mostrar")
-    public String mostrarEmpleados(Model model){
-         List<Empleado> listaEmpleados = empleadoService.findAll();
-         model.addAttribute("empleadosCapturados", listaEmpleados);
-         return "mostrarEmpleado.jsp";
-     }
+    @RequestMapping("/mostrar")
+    public String mostrarEmpleados(Model model) {
+        List<Empleado> listaEmpleados = empleadoService.findAll();
+        model.addAttribute("empleadosCapturados", listaEmpleados);
+        return "mostrarEmpleado.jsp";
+    }
 
-     @RequestMapping("/editar/{id}")
-    public String editar(@PathVariable("id")Long id, Model model){
-         Empleado empleado = empleadoService.buscarId(id);
-         model.addAttribute("empleado",empleado);
-         return "editarEmpleado.jsp";
-     }
-     @RequestMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable("id")Long id,Model model){
-         empleadoService.eliminarId(id);
-         return "redirect:/empleado/mostrar";
-     }
+    @RequestMapping("/editar/{id}")
+    public String editar(@PathVariable("id") Long id, Model model) {
+        Empleado empleado = empleadoService.buscarId(id);
+        model.addAttribute("empleado", empleado);
+        return "editarEmpleado.jsp";
+    }
 
-     @PostMapping("/actualizar/{id}")
-    public String actualizarEmpleado(@PathVariable("id")Long id,
+    @RequestMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable("id") Long id, Model model) {
+        empleadoService.eliminarId(id);
+        return "redirect:/empleado/mostrar";
+    }
+
+    @PostMapping("/actualizar/{id}")
+    public String actualizarEmpleado(@PathVariable("id") Long id,
                                      @Valid @ModelAttribute("empleado") Empleado empleado,
                                      BindingResult result,
-                                     Model model){
-         if(result.hasErrors()){
-             model.addAttribute("msgError","Datos Erroneos");
-                     return "editarEmpleados.jsp";
-         }else{
-             empleado.setId(id);
-             empleadoService.registroEmpleado(empleado);
-             return"redirect:/empleado/mostrar";
-         }
+                                     Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("msgError", "Datos Erroneos");
+            return "editarEmpleados.jsp";
+        } else {
+            empleado.setId(id);
+            empleadoService.registroEmpleado(empleado);
+            return "redirect:/empleado/mostrar";
+        }
 
-     }
+    }
 
-
-
-
-
-
-
-
-
-
-
-=======
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class EmpleadoController {
->>>>>>> franciscoCid
 }
+
+
+
+
+
+
+

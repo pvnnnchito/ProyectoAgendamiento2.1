@@ -1,6 +1,6 @@
 package com.equipo1.services;
 
-<<<<<<< HEAD
+
 import com.equipo1.models.Empleado;
 import com.equipo1.repositories.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,9 @@ public class EmpleadoService {
     @Autowired
     EmpleadoRepository empleadoRepository;
 
-    /**Guarda los datos en la base de datos*/
+    /**
+     * Guarda los datos en la base de datos
+     */
     public void registroEmpleado(Empleado empleado) {
         empleadoRepository.save(empleado);
     }
@@ -25,15 +27,8 @@ public class EmpleadoService {
     public Empleado buscarId(Long id) {
         return empleadoRepository.findById(id).get();
     }
+
     public void eliminarId(Long id) {
         empleadoRepository.deleteById(id);
     }
-
-
-=======
-import org.springframework.stereotype.Service;
-
-@Service
-public class EmpleadoService {
->>>>>>> franciscoCid
 }
