@@ -7,9 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -47,12 +49,50 @@ public class ServicioController {
     }
 
     //tercera ruta, para mostrar la tabla de servicios
-    @RequestMapping("/tablaservicios")
-    public String tablaservicios(Model model){
+    @RequestMapping("/tablaServicios")
+    public String tablaServicios(Model model){
         //copiamos la lista que tenemos arriba, no es necesario volver a crearla
         List<Servicio> listaServicios = servicioService.findAll();
         // y con model pasamos la lista al jsp
-        model.addAttribute("sserviciosRegistrados",listaServicios);
+        model.addAttribute("serviciosRegistrados",listaServicios);
         return "serviciosRegistrados.jsp";
     }
+
+    @RequestMapping("/editar/{id}")
+    public String editarServicio(@PathVariable("id")Long id, Model model){
+        Servicio servicio = servicioService.buscarId(id);
+        model.addAttribute("servicio",servicio);
+        return"editarServicio.jsp";
+    }
+
+    @RequestMapping("/eliminar/{id}")
+    public String eliminarServicio(@PathVariable("id")Long id){
+
+        servicioService.eliminarById(id);
+        return"redirect:/servicio/tablaServicios";
+
+    }
+
+    @PostMapping("/actualizar/{id}")
+    public String actualizarServicio(@PathVariable("id")Long id,
+                                     @Valid @ModelAttribute("servicio")Servicio servicio,
+                                     BindingResult result,
+                                     Model model){
+        if (result.hasErrors()){
+            model.addAttribute("msgError","Debe ingresar los datos correctamente");
+            return "editarServicio.jsp";
+
+        }else {
+            servicio.setId(id);
+            servicioService.saveService(servicio);
+            List<Servicio> listaServicio = servicioService.findAll();
+            model.addAttribute("serviciosRegistrados",listaServicio);
+            return "redirect:/servicio/tablaServicios";
+
+        }
+
+    }
+
+
+
 }

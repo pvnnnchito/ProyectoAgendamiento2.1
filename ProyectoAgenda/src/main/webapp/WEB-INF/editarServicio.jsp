@@ -30,7 +30,7 @@
     </c:if>
 
     <%--@elvariable id="servicio" type="java"--%>
-    <form:form action="/servicio/registrado" method="post" modelAttribute="servicio">
+    <form:form action="/servicio/actualizar/${servicio.id}" method="post" modelAttribute="servicio">
 
         <form:label path="nombreServicio" class="form-label">Nombre del servicio: </form:label>
         <form:input path="nombreServicio" class="form-control"/>
@@ -39,7 +39,7 @@
         <form:input type="number" path="duracion" class="form-control"/>
         <br>
         <!-- submit para el envío de información -->
-        <button type="submit" class="btn btn-primary">Registrar servicio</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
     </form:form>
 </div>
 </body>
