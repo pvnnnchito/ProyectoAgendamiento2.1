@@ -1,6 +1,9 @@
 package com.equipo1.models;
 
-public class ServicioOfrecido extends Servicio {
+import javax.persistence.*;
+
+
+public class ServicioOfrecido  {
 
     //Atributos
 
