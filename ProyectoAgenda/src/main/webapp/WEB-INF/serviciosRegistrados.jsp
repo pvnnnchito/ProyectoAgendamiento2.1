@@ -20,7 +20,13 @@
 </head>
 <body>
 <div class="container">
+    <!-- formulario de busqueda -->
+    <form action="/servicio/buscar" method="post">
+        <label for="categoria">Filtrar por categória:</label>
+        <input type="text" id="categoria" name="categoria">
 
+        <input type="submit" value="Buscar" class="btn btn-primary">
+    </form>
     <table class="table">
         <thead>
         <tr>
@@ -43,6 +49,7 @@
 
         </tbody>
     </table>
+    <a class="btn btn-primary" href="/servicio" role="button">Agregar nuevo servicio</a>
 </div>
 </body>
 </html>

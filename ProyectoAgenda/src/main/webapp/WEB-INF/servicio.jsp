@@ -40,7 +40,9 @@
         <br>
         <!-- submit para el envío de información -->
         <button type="submit" class="btn btn-primary">Registrar servicio</button>
+        <a class="btn btn-primary" href="/servicio/tabla" role="button">Ver servicios ofrecidos</a>
     </form:form>
+
 </div>
 </body>
 </html>

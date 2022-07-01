@@ -41,6 +41,7 @@
         <!-- submit para el envío de información -->
         <button type="submit" class="btn btn-warning">Editar servicio</button>
     </form:form>
+
 </div>
 </body>
 </html>

@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -49,7 +46,7 @@ public class ServicioController {
     }
 
     //tercera ruta, para mostrar la tabla de servicios
-    @RequestMapping("/tablaservicios")
+    @RequestMapping("/tabla")
     public String tablaservicios(Model model){
         //copiamos la lista que tenemos arriba, no es necesario volver a crearla
         List<Servicio> listaServicios = servicioService.findAll();
@@ -84,10 +81,14 @@ public class ServicioController {
             List<Servicio> listaServicios = servicioService.findAll();
             //con MODEL es que pasamos cosas al JSP
             model.addAttribute("serviciosRegistrados",listaServicios);
-            return "redirect:/servicio/tablaservicios";//tenemos que agregar la lista de servicios luego
+            return "redirect:/servicio/tabla";//tenemos que agregar la lista de servicios luego
         }
     }
 
     //sexta ruta, para eliminar
-
+    @RequestMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable("id") Long id){
+        servicioService.eliminarServicio(id);
+        return "redirect:/servicio/tabla";
+    }
 }
