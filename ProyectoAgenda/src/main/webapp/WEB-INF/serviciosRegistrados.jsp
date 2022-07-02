@@ -22,7 +22,7 @@
 <div class="container">
     <!-- formulario de busqueda -->
     <form action="/servicio/buscar" method="post">
-        <label for="categoria">Filtrar por categória:</label>
+        <label for="categoria">Filtrar por categoría:</label>
         <input type="text" id="categoria" name="categoria">
 
         <input type="submit" value="Buscar" class="btn btn-primary">
