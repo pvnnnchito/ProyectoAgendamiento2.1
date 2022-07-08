@@ -53,13 +53,14 @@ public class EmpleadoController {
 
     @RequestMapping("/editar/{id}")
     public String editar(@PathVariable("id") Long id, Model model) {
+
         Empleado empleado = empleadoService.buscarId(id);
         model.addAttribute("empleado", empleado);
         return "editarEmpleado.jsp";
     }
 
     @RequestMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable("id") Long id, Model model) {
+    public String eliminar(@PathVariable("id") Long id) {
         empleadoService.eliminarId(id);
         return "redirect:/empleado/mostrar";
     }
@@ -73,7 +74,8 @@ public class EmpleadoController {
             model.addAttribute("msgError", "Datos Erroneos");
             return "editarEmpleados.jsp";
         } else {
-            empleado.setId(id);
+
+            empleado.setId(id);//Ver
             empleadoService.registroEmpleado(empleado);
             return "redirect:/empleado/mostrar";
         }

@@ -14,10 +14,10 @@ public class Empleado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+
     @Size(min=4, max=15)
     private String nombre;
-    @NotNull
+
     @Size(min=4, max=15)
     private String apellido;
 

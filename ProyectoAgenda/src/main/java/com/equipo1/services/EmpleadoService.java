@@ -6,6 +6,7 @@ import com.equipo1.repositories.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
@@ -16,7 +17,7 @@ public class EmpleadoService {
     /**
      * Guarda los datos en la base de datos
      */
-    public void registroEmpleado(Empleado empleado) {
+    public void registroEmpleado(@Valid Empleado empleado) {
         empleadoRepository.save(empleado);
     }
 
