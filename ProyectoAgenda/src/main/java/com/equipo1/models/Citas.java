@@ -1,9 +1,12 @@
 package com.equipo1.models;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 
+@Entity
+@Table(name = "citas")
 public class Citas {
-	/* id int PK
+	/** id int PK
 	 * fecha_creacion timestamp
 	 * creador int FK
 	 * cliente_id int N FK (este se hereda/traspasa de Cliente,java)
@@ -14,29 +17,27 @@ public class Citas {
 	 * hora_termino timestamp
 	 * cancelado boolean
 	 */
-	//timestamp importar de java util
-	
 	//atributos
-	private int idCitas; //PK, qué nombre es mejor? id o idCitas
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private Timestamp fechaCreacion;
-	private int creador; //FK
-	private int clienteId; //herencia
-	private int empleadoId; //herencia
+	private Integer creador; //FK
+	private Integer clienteId; //herencia
+	private Integer empleadoId; //herencia
 	private String nombreCliente; //herencia?
 	private String contactoCliente; //telefono? o persona?
 	private Timestamp horaInicio;
 	private Timestamp horaTermino;
-	private boolean cancelado;
+	private Boolean cancelado;
 	
 	//constructores
 	public Citas() {
 		super();
 	}
 
-	public Citas(int id, Timestamp fechaCreacion, int creador, int clienteId, int empleadoId, String nombreCliente,
-			String contactoCliente, Timestamp horaInicio, Timestamp horaTermino, boolean cancelado) {
-		super();
-		this.idCitas = id;
+	//Constructor lleno
+	public Citas(Timestamp fechaCreacion, Integer creador, Integer clienteId, Integer empleadoId, String nombreCliente, String contactoCliente, Timestamp horaInicio, Timestamp horaTermino, Boolean cancelado) {
 		this.fechaCreacion = fechaCreacion;
 		this.creador = creador;
 		this.clienteId = clienteId;
@@ -48,13 +49,13 @@ public class Citas {
 		this.cancelado = cancelado;
 	}
 
-	//getters y setters
-	public int getId() {
-		return idCitas;
+	//Getter & Setter
+	public Long getId() {
+		return id;
 	}
 
-	public void setId(int id) {
-		this.idCitas = id;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Timestamp getFechaCreacion() {
@@ -65,27 +66,27 @@ public class Citas {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	public int getCreador() {
+	public Integer getCreador() {
 		return creador;
 	}
 
-	public void setCreador(int creador) {
+	public void setCreador(Integer creador) {
 		this.creador = creador;
 	}
 
-	public int getClienteId() {
+	public Integer getClienteId() {
 		return clienteId;
 	}
 
-	public void setClienteId(int clienteId) {
+	public void setClienteId(Integer clienteId) {
 		this.clienteId = clienteId;
 	}
 
-	public int getEmpleadoId() {
+	public Integer getEmpleadoId() {
 		return empleadoId;
 	}
 
-	public void setEmpleadoId(int empleadoId) {
+	public void setEmpleadoId(Integer empleadoId) {
 		this.empleadoId = empleadoId;
 	}
 
@@ -121,16 +122,11 @@ public class Citas {
 		this.horaTermino = horaTermino;
 	}
 
-	public boolean isCancelado() {
+	public Boolean getCancelado() {
 		return cancelado;
 	}
 
-	public void setCancelado(boolean cancelado) {
+	public void setCancelado(Boolean cancelado) {
 		this.cancelado = cancelado;
 	}
-	
-	
-	
-	
-
 }

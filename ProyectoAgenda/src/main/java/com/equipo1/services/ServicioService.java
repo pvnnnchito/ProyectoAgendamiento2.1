@@ -22,4 +22,12 @@ public class ServicioService {
     public List<Servicio> findAll() {
         return servicioRepository.findAll();
     }
+
+    public Servicio buscarId(Long id) {
+        return servicioRepository.findById(id).get();
+    }
+
+    public void eliminarById(Long id) {
+        servicioRepository.deleteById(id);
+    }
 }

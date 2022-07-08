@@ -15,11 +15,11 @@ pageEncoding="UTF-8"%>
 
             <body>
                 <div class="container">
-                    <c:if test="${msgError != null}">
+                    <c:if test="${msgError!= null}">
                         <c:out value="${msgError}"></c:out>
                     </c:if>
                     <%--@elvariable id="cliente" type="java"--%>
-                    <form:form action="/cliente/guardar" method="post" modelAttribute="cliente">
+                    <form:form action="/cliente/actualizar/${cliente.id}" method="post" modelAttribute="cliente">
 
                         <form:label path="nombre">Nombre Completo:</form:label>
                         <form:input path="nombre" placeholder="Nombre Apellido" />
@@ -30,7 +30,7 @@ pageEncoding="UTF-8"%>
                         <form:label path="correo">Correo:</form:label>
                         <form:input type="email" path="correo" placeholder="correo@correo.com" />
                         <br>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary">Editar</button>
                     </form:form>
 
                 </div>
