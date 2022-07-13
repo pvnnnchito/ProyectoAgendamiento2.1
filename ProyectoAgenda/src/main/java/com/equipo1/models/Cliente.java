@@ -15,7 +15,14 @@ public class Cliente {
 	private String nombre; //en base de datos, string es un varchar, no sé si se pueden escribir límites de caracteres
 	private String telefono;
 	private String correo;
-	
+	@NotNull
+	private String password;
+
+	@Transient
+	private String passwordConfirmacion;
+
+
+
 	//constructor vacio
 	public Cliente() {
 		super();
@@ -64,5 +71,20 @@ public class Cliente {
 
 	public void setCorreo(String correo) {
 		this.correo = correo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPasswordConfirmacion() {
+		return passwordConfirmacion;
+	}
+
+	public void setPasswordConfirmacion(String passwordConfirmacion) {
+		this.passwordConfirmacion = passwordConfirmacion;
 	}
 }

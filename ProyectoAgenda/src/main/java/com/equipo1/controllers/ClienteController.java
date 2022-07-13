@@ -26,7 +26,7 @@ public class ClienteController {
     }
 
     @PostMapping("/guardar")
-    public String guardarCliente(@Valid @ModelAttribute("cliente") Cliente cliente,
+    public String guardarCliente(@ModelAttribute("cliente") Cliente cliente,
                                  BindingResult result,
                                  Model model) {
         if (result.hasErrors()) {

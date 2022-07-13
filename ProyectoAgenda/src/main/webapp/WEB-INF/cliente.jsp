@@ -30,6 +30,12 @@ pageEncoding="UTF-8"%>
                         <form:label path="correo">Correo:</form:label>
                         <form:input type="email" path="correo" placeholder="correo@correo.com" />
                         <br>
+                        <form:label path="password">Password:</form:label>
+                        <form:input type="password" path="password" placeholder="Password" />
+                        <br>
+                        <form:label path="passwordConfirmacion">Password:</form:label>
+                        <form:input type="password" path="passwordConfirmacion" placeholder="Confirmar Password" />
+                        <br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form:form>
 
