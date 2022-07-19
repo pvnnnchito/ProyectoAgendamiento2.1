@@ -18,8 +18,6 @@ public class NegocioController {
         return "registroNegocio.jsp";
     }
 
-    @RequestMapping("/registro")
-    public String
 
 
 
