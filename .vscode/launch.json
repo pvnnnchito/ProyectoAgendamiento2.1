@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProyectoAgendaApplication<ProyectoAgenda>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.equipo1.ProyectoAgendaApplication",
+            "projectName": "ProyectoAgenda",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
