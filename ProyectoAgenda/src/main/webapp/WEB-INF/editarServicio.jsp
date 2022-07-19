@@ -22,7 +22,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <h1>Hola, por favor introduzca el tipo de servicio:</h1>
+=======
+<h1>Hola, por favor edita tu servicio:</h1>
+>>>>>>> main
 
 <div>
     <c:if test="${msgError!= null }">
@@ -39,8 +43,14 @@
         <form:input type="number" path="duracion" class="form-control"/>
         <br>
         <!-- submit para el envío de información -->
+<<<<<<< HEAD
         <button type="submit" class="btn btn-primary">Editar</button>
     </form:form>
+=======
+        <button type="submit" class="btn btn-warning">Editar servicio</button>
+    </form:form>
+
+>>>>>>> main
 </div>
 </body>
 </html>

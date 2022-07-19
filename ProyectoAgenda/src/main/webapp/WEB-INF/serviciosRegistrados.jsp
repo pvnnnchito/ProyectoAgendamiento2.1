@@ -20,7 +20,13 @@
 </head>
 <body>
 <div class="container">
+    <!-- formulario de busqueda -->
+    <form action="/servicio/buscar" method="post">
+        <label for="categoria">Filtrar por categória:</label>
+        <input type="text" id="categoria" name="categoria">
 
+        <input type="submit" value="Buscar" class="btn btn-primary">
+    </form>
     <table class="table">
         <thead>
         <tr>
@@ -36,14 +42,20 @@
                 <th scope="row">${servicio.id}</th>
                 <td>${servicio.nombreServicio}</td>
                 <td>${servicio.duracion}</td>
+<<<<<<< HEAD
                 <td><a class="btn btn-warning" href="/servicio/editar/${servicio.id}" role="button">Editar</a></td>
                 <td><a class="btn btn-danger" href="/servicio/eliminar/${servicio.id}" role="button">Eliminar</a></td>
 
+=======
+                <td><a class="btn btn-warning" href="editar/${servicio.id}" role="button">Editar</a></td>
+                <td><a class="btn btn-danger" href="eliminar/${servicio.id}" role="button">Eliminar</a></td>
+>>>>>>> main
             </tr>
         </c:forEach>
 
         </tbody>
     </table>
+    <a class="btn btn-primary" href="/servicio" role="button">Agregar nuevo servicio</a>
 </div>
 </body>
 </html>
