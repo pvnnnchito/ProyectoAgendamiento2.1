@@ -1,15 +1,24 @@
 package com.equipo1.models;
 
 import javax.persistence.*;
+@Entity
+@Table(name="servicios_ofrecidos")
 
-
-public class ServicioOfrecido  {
-
+public class ServicioOfrecido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //Atributos
+    private Long id;
+    private int idCitas; // --> FK idCitas
+    private int idServicio;
 
-    private int idOfrecido;
-    private int idCalendario;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "citas_id")
+    private Citas citas;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "servicios_id")
+    private Servicio servicio ;
     //constructores
 
 
@@ -17,27 +26,35 @@ public class ServicioOfrecido  {
         super();
     }
 
-    public ServicioOfrecido(int idOfrecido, int idCalendario) {
-        this.idOfrecido = idOfrecido;
-        this.idCalendario = idCalendario;
+    public ServicioOfrecido(int idCitas, int idServicio) {
+        this.idCitas = idCitas;
+        this.idServicio = idServicio;
     }
 
-    //Getter & Setter
+//Getter & Setter
 
 
-    public int getIdOfrecido() {
-        return idOfrecido;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdOfrecido(int idOfrecido) {
-        this.idOfrecido = idOfrecido;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public int getIdCalendario() {
-        return idCalendario;
+    public int getIdCitas() {
+        return idCitas;
     }
 
-    public void setIdCalendario(int idCalendario) {
-        this.idCalendario = idCalendario;
+    public void setIdCitas(int idCitas) {
+        this.idCitas = idCitas;
+    }
+
+    public int getIdServicio() {
+        return idServicio;
+    }
+
+    public void setIdServicio(int idServicio) {
+        this.idServicio = idServicio;
     }
 }

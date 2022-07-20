@@ -42,7 +42,6 @@ public class ApiRestController {
     public List<Servicio> obtenerListaServicio(){
         List<Servicio> listadoServicio = servicioService.findAll();
         return listadoServicio;
-
     }
 
 }
