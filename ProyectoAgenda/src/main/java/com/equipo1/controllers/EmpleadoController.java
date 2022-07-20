@@ -27,8 +27,8 @@ public class EmpleadoController {
 
     @PostMapping("/guardar")
     public String guardarEmpleado(@Valid @ModelAttribute("empleado") Empleado empleado,
-                                  BindingResult result,
-                                  Model model) {
+            BindingResult result,
+            Model model) {
         if (result.hasErrors()) {
             model.addAttribute("msgError", "Debe ingresar los datos correctamente");
             return "empleado.jsp";
@@ -40,7 +40,6 @@ public class EmpleadoController {
             model.addAttribute("empleadosCapturados", listaEmpleados);
             return "mostrarEmpleado.jsp";
         }
-
 
     }
 
@@ -67,15 +66,15 @@ public class EmpleadoController {
 
     @PostMapping("/actualizar/{id}")
     public String actualizarEmpleado(@PathVariable("id") Long id,
-                                     @Valid @ModelAttribute("empleado") Empleado empleado,
-                                     BindingResult result,
-                                     Model model) {
+            @Valid @ModelAttribute("empleado") Empleado empleado,
+            BindingResult result,
+            Model model) {
         if (result.hasErrors()) {
             model.addAttribute("msgError", "Datos Erroneos");
             return "editarEmpleados.jsp";
         } else {
 
-            empleado.setId(id);//Ver
+            empleado.setId(id);// Ver
             empleadoService.registroEmpleado(empleado);
             return "redirect:/empleado/mostrar";
         }
@@ -83,10 +82,3 @@ public class EmpleadoController {
     }
 
 }
-
-
-
-
-
-
-
