@@ -2,6 +2,7 @@ package com.equipo1.models;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "citas")
@@ -20,14 +21,24 @@ public class Citas {
 	private Timestamp horaInicio;
 	private Timestamp horaTermino;
 	private Boolean cancelado;
-	
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
+
+	@OneToMany(mappedBy = "citas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<ServicioAgendado> listaAgenda;
+
+	@OneToMany(mappedBy = "citas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<ServicioOfrecido> listaOferta;
+
 	//constructores
 	public Citas() {
 		super();
 	}
 
 	//Constructor lleno
-	public Citas(Timestamp fechaCreacion, Integer creador, Integer clienteId, Integer empleadoId, String nombreCliente, String contactoCliente, Timestamp horaInicio, Timestamp horaTermino, Boolean cancelado) {
+	public Citas(Timestamp fechaCreacion, Integer creador, Integer clienteId , Integer empleadoId, String nombreCliente, String contactoCliente, Timestamp horaInicio, Timestamp horaTermino, Boolean cancelado) {
 		this.fechaCreacion = fechaCreacion;
 		this.creador = creador;
 		this.clienteId = clienteId;

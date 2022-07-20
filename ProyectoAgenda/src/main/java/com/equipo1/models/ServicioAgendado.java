@@ -11,17 +11,25 @@ public class ServicioAgendado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // --> PK
-    private int idAgendado; // --> FK idCitas
-    private int idCalendario; //--> FK idServicio
+    private int idCitas; // --> FK idCitas
+    private int idServicio; //--> FK idServicio
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "citas_id")
+    private Citas citas;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "servicio_id")
+    private Servicio servicio ;
 
     //Constructores
 
     public ServicioAgendado() {
     }
 
-    public ServicioAgendado(int idAgendado, int idCalendario) {
-        this.idAgendado = idAgendado;
-        this.idCalendario = idCalendario;
+    public ServicioAgendado(int idCitas, int idServicio) {
+        this.idCitas = idCitas;
+        this.idServicio = idServicio;
     }
 
     //Getter & Setter
@@ -35,19 +43,19 @@ public class ServicioAgendado {
         this.id = id;
     }
 
-    public int getIdAgendado() {
-        return idAgendado;
+    public int getidCitas() {
+        return idCitas;
     }
 
-    public void setIdAgendado(int idAgendado) {
-        this.idAgendado = idAgendado;
+    public void setidCitas(int idCitas) {
+        this.idCitas = idCitas;
     }
 
-    public int getIdCalendario() {
-        return idCalendario;
+    public int getidServicio() {
+        return idServicio;
     }
 
-    public void setIdCalendario(int idCalendario) {
-        this.idCalendario = idCalendario;
+    public void setidServicio(int idServicio) {
+        this.idServicio = idServicio;
     }
 }

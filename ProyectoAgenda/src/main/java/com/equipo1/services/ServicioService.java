@@ -27,19 +27,11 @@ public class ServicioService {
         return servicioRepository.findById(id).get();
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public void eliminarById(Long id) {
         servicioRepository.deleteById(id);
-=======
-    public String eliminarServicio(Long id) {
+    }
+
+    public void eliminarServicio(Long id) {
         servicioRepository.deleteById(id);
-        return null;
->>>>>>> main
-=======
-    public String eliminarServicio(Long id) {
-        servicioRepository.deleteById(id);
-        return null;
->>>>>>> main
     }
 }

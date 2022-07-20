@@ -2,6 +2,7 @@ package com.equipo1.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name="clientes")
@@ -21,7 +22,8 @@ public class Cliente {
 	@Transient
 	private String passwordConfirmacion;
 
-
+	@OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Citas> citaAgendada;
 
 	//constructor vacio
 	public Cliente() {
