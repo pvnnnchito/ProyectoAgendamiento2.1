@@ -22,7 +22,7 @@ public class Categoria {
 
     //relación OneToMany con Servicio
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Servicio> servicioList;
+    private List<Servicio> listaServicios;
 
 
     //contructores

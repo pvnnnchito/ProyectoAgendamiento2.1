@@ -31,7 +31,7 @@ public class Servicio {
 
     //Relacion OneToMane con ServicioOfrecido
     @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ServicioOfrecido> listaOferta;
+    private List<ServicioOfrecido> listaOfrecidos;
 
 
 

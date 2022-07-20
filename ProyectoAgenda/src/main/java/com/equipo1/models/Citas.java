@@ -22,15 +22,18 @@ public class Citas {
 	private Timestamp horaTermino;
 	private Boolean cancelado;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	//RELACIONES
+
+	//Relacion ManyToOne con Cliente
+	/*@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cliente_id")
-	private Cliente cliente;
+	private Cliente cliente;*/
 
 	@OneToMany(mappedBy = "citas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<ServicioAgendado> listaAgenda;
 
 	@OneToMany(mappedBy = "citas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<ServicioOfrecido> listaOferta;
+	private List<ServicioOfrecido> listaOfrecidos;
 
 	//constructores
 	public Citas() {

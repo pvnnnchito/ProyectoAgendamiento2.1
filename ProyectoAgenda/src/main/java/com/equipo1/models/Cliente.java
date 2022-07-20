@@ -22,8 +22,8 @@ public class Cliente {
 	@Transient
 	private String passwordConfirmacion;
 
-	@OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Citas> citaAgendada;
+	/*@OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Citas> citaAgendada;*/
 
 	//constructor vacio
 	public Cliente() {

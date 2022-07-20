@@ -14,10 +14,15 @@ public class ServicioAgendado {
     private int idCitas; // --> FK idCitas
     private int idServicio; //--> FK idServicio
 
+
+    //RELACIONES
+
+    //Relacion ManyToOne con Citas
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "citas_id")
     private Citas citas;
 
+    //Relacion ManyToOne con Servicio
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "servicio_id")
     private Servicio servicio ;
