@@ -6,17 +6,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "citas")
 public class Citas {
-	/** id int PK
-	 * fecha_creacion timestamp
-	 * creador int FK
-	 * cliente_id int N FK (este se hereda/traspasa de Cliente,java)
-	 * empleado_id int N FK (este se traspasa)
-	 * nombre_cliente varchar(128) (no lo dice la imagen pero se debería traspasar de Cliente.java)
-	 * contacto_cliente varchar(128) (quizá este sea el telefono de cliente)
-	 * hora_inicio timestamp
-	 * hora_termino timestamp
-	 * cancelado boolean
-	 */
+
 	//atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

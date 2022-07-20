@@ -13,7 +13,7 @@ public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
 
-    public void guardarCliente(@Valid Cliente cliente) {
+    public void guardarCliente(Cliente cliente) {
         clienteRepository.save(cliente);
     }
 

@@ -43,9 +43,14 @@
                 <td>${servicio.nombreServicio}</td>
                 <td>${servicio.duracion}</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <td><a class="btn btn-warning" href="/servicio/editar/${servicio.id}" role="button">Editar</a></td>
                 <td><a class="btn btn-danger" href="/servicio/eliminar/${servicio.id}" role="button">Eliminar</a></td>
 
+=======
+                <td><a class="btn btn-warning" href="editar/${servicio.id}" role="button">Editar</a></td>
+                <td><a class="btn btn-danger" href="eliminar/${servicio.id}" role="button">Eliminar</a></td>
+>>>>>>> main
 =======
                 <td><a class="btn btn-warning" href="editar/${servicio.id}" role="button">Editar</a></td>
                 <td><a class="btn btn-danger" href="eliminar/${servicio.id}" role="button">Eliminar</a></td>

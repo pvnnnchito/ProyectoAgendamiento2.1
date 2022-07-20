@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 =======
 import org.springframework.web.bind.annotation.*;
 >>>>>>> main
+=======
+import org.springframework.web.bind.annotation.*;
+>>>>>>> main
 
 import javax.validation.Valid;
 import java.util.List;
+
 
 @Controller
 @RequestMapping("/servicio")
@@ -53,8 +58,13 @@ public class ServicioController {
 
     //tercera ruta, para mostrar la tabla de servicios
 <<<<<<< HEAD
+<<<<<<< HEAD
     @RequestMapping("/tablaServicios")
     public String tablaServicios(Model model){
+=======
+    @RequestMapping("/tabla")
+    public String tablaservicios(Model model){
+>>>>>>> main
 =======
     @RequestMapping("/tabla")
     public String tablaservicios(Model model){
@@ -66,6 +76,7 @@ public class ServicioController {
         return "serviciosRegistrados.jsp";
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     @RequestMapping("/editar/{id}")
     public String editarServicio(@PathVariable("id")Long id, Model model){
@@ -105,6 +116,8 @@ public class ServicioController {
 
 
 =======
+=======
+>>>>>>> main
     //cuarta ruta, creada con el boton para mostrar los datos del objeto editado
     @RequestMapping("/editar/{id}")
     public String editar(@PathVariable("id") Long id, Model model){
@@ -141,5 +154,8 @@ public class ServicioController {
         servicioService.eliminarServicio(id);
         return "redirect:/servicio/tabla";
     }
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 }
