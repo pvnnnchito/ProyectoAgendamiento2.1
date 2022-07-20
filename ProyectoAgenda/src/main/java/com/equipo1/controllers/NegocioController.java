@@ -14,7 +14,7 @@ public class NegocioController {
     NegocioService negocioService;
 
     @RequestMapping("")
-    public String registronegocio(@ModelAttribute("negocio") Negocio negocio){
+    public String registroNegocio(@ModelAttribute("negocio") Negocio negocio){
         return "registroNegocio.jsp";
     }
 
