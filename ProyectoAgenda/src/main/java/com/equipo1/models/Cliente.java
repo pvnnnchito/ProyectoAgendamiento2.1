@@ -1,27 +1,37 @@
 package com.equipo1.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="clientes")
 public class Cliente {
 
-		/* id int PK
-		 * nombre varchar (50)
-		 * telefono varchar (20)
-		 * correo varchar (50)
-		 */
-
 	//atributos
-	private int id;//PK //no sé si debe ser int o Integer
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@NotNull
 	private String nombre; //en base de datos, string es un varchar, no sé si se pueden escribir límites de caracteres
 	private String telefono;
 	private String correo;
-	
+	@NotNull
+	private String password;
+
+	@Transient
+	private String passwordConfirmacion;
+
+
+
 	//constructor vacio
 	public Cliente() {
 		super();
 	}
 
 	//constructor lleno
-	public Cliente(int id, String nombre, String telefono, String correo) {
-		super();
+
+
+	public Cliente(Long id, String nombre, String telefono, String correo) {
 		this.id = id;
 		this.nombre = nombre;
 		this.telefono = telefono;
@@ -29,11 +39,13 @@ public class Cliente {
 	}
 
 	//getters y setters
-	public int getId() {
+
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -61,5 +73,18 @@ public class Cliente {
 		this.correo = correo;
 	}
 
+	public String getPassword() {
+		return password;
+	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPasswordConfirmacion() {
+		return passwordConfirmacion;
+	}
+
+	public void setPasswordConfirmacion(String passwordConfirmacion) {
+		this.passwordConfirmacion = passwordConfirmacion;
+	}
 }
