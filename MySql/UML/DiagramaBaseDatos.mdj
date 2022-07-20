@@ -40,7 +40,11 @@
 									"top": 13,
 									"width": 269.3193359375,
 									"height": 13,
+<<<<<<< HEAD:MySql/DiagramaBaseDatos.mdj
+									"text": "agendamiento"
+=======
 									"text": "disponibilidades"
+>>>>>>> LuisMejias:MySql/UML/DiagramaBaseDatos.mdj
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -1400,7 +1404,11 @@
 					"_parent": {
 						"$ref": "AAAAAAGBZ80Tv2Ld4dc="
 					},
+<<<<<<< HEAD:MySql/DiagramaBaseDatos.mdj
+					"name": "agendamiento",
+=======
 					"name": "disponibilidades",
+>>>>>>> LuisMejias:MySql/UML/DiagramaBaseDatos.mdj
 					"columns": [
 						{
 							"_type": "ERDColumn",
