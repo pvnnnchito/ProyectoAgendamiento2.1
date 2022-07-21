@@ -2,6 +2,7 @@ package com.equipo1.models;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="negocios")
@@ -18,6 +19,11 @@ public class Negocio {
     @Column(updatable = false) //
     private Date createdAt;
     private Date updatedAt;
+
+    //RELACIONES
+    //Relacion OneToMany con Servicio
+    @OneToMany(mappedBy = "negocio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Servicio> listaServicios;
 
     public Negocio() {
     }
