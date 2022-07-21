@@ -1,13 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-<<<<<<< HEAD
-import Pruebas from "./pruebas";
-=======
-import App from "./App"
-import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> main
+import App from "./App";
 
 ReactDOM.render(
-    <Pruebas/>,
+    <App/>,
     document.querySelector("#root")
 );
