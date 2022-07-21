@@ -2,6 +2,7 @@ package com.equipo1.models;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="servicios")
@@ -16,11 +17,26 @@ public class Servicio {
     @Column(updatable = false) //nos indica que esta columna no se puede actualizar por el sistema.
     private Date createdAt;
     private Date updatedAt;
+
+    //RELACIONES
+
     //relacion ManyToOne con Categoria FK
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
+    //Relacion OneToMane con ServicioAgendado
+    @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ServicioAgendado> listaAgenda;
+
+    //Relacion OneToMane con ServicioOfrecido
+    @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ServicioOfrecido> listaOfrecidos;
+
+    //Relacion ManyToOne con Negocio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "negocio_id")
+    private Negocio negocio;
 
     //constructor vacío
     public Servicio() {

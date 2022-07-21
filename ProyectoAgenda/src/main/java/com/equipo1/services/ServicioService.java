@@ -27,8 +27,11 @@ public class ServicioService {
         return servicioRepository.findById(id).get();
     }
 
-    public String eliminarServicio(Long id) {
+    public void eliminarById(Long id) {
         servicioRepository.deleteById(id);
-        return null;
+    }
+
+    public void eliminarServicio(Long id) {
+        servicioRepository.deleteById(id);
     }
 }

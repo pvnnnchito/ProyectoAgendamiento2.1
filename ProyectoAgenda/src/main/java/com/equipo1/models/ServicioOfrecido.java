@@ -1,15 +1,25 @@
 package com.equipo1.models;
 
 import javax.persistence.*;
+@Entity
+@Table(name="servicios_ofrecidos")
 
-
-public class ServicioOfrecido  {
-
+public class ServicioOfrecido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //Atributos
+    private Long id;
 
-    private int idOfrecido;
-    private int idCalendario;
+    //RELACIONES
+    //Relacion ManyToOne con Citas
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "citas_id")
+    private Citas citas;
 
+    //Relacion ManyToOne con Servicio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "servicio_id")
+    private Servicio servicio ;
     //constructores
 
 
@@ -17,27 +27,16 @@ public class ServicioOfrecido  {
         super();
     }
 
-    public ServicioOfrecido(int idOfrecido, int idCalendario) {
-        this.idOfrecido = idOfrecido;
-        this.idCalendario = idCalendario;
+
+//Getter & Setter
+
+
+    public Long getId() {
+        return id;
     }
 
-    //Getter & Setter
-
-
-    public int getIdOfrecido() {
-        return idOfrecido;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setIdOfrecido(int idOfrecido) {
-        this.idOfrecido = idOfrecido;
-    }
-
-    public int getIdCalendario() {
-        return idCalendario;
-    }
-
-    public void setIdCalendario(int idCalendario) {
-        this.idCalendario = idCalendario;
-    }
 }

@@ -2,6 +2,7 @@ package com.equipo1.models;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "citas")
@@ -13,25 +14,39 @@ public class Citas {
 	private Long id;
 	private Timestamp fechaCreacion;
 	private Integer creador; //FK
-	private Integer clienteId; //herencia
-	private Integer empleadoId; //herencia
 	private String nombreCliente; //herencia?
 	private String contactoCliente; //telefono? o persona?
 	private Timestamp horaInicio;
 	private Timestamp horaTermino;
 	private Boolean cancelado;
-	
+
+	//RELACIONES
+
+	//Relacion ManyToOne con Empleado
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "empleado_id")
+	private Empleado empleado;
+
+	//Relacion ManyToOne con Cliente
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
+
+	@OneToMany(mappedBy = "citas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<ServicioAgendado> listaAgenda;
+
+	@OneToMany(mappedBy = "citas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<ServicioOfrecido> listaOfrecidos;
+
 	//constructores
 	public Citas() {
 		super();
 	}
 
 	//Constructor lleno
-	public Citas(Timestamp fechaCreacion, Integer creador, Integer clienteId, Integer empleadoId, String nombreCliente, String contactoCliente, Timestamp horaInicio, Timestamp horaTermino, Boolean cancelado) {
+	public Citas(Timestamp fechaCreacion, Integer creador, String nombreCliente, String contactoCliente, Timestamp horaInicio, Timestamp horaTermino, Boolean cancelado) {
 		this.fechaCreacion = fechaCreacion;
 		this.creador = creador;
-		this.clienteId = clienteId;
-		this.empleadoId = empleadoId;
 		this.nombreCliente = nombreCliente;
 		this.contactoCliente = contactoCliente;
 		this.horaInicio = horaInicio;
@@ -62,22 +77,6 @@ public class Citas {
 
 	public void setCreador(Integer creador) {
 		this.creador = creador;
-	}
-
-	public Integer getClienteId() {
-		return clienteId;
-	}
-
-	public void setClienteId(Integer clienteId) {
-		this.clienteId = clienteId;
-	}
-
-	public Integer getEmpleadoId() {
-		return empleadoId;
-	}
-
-	public void setEmpleadoId(Integer empleadoId) {
-		this.empleadoId = empleadoId;
 	}
 
 	public String getNombreCliente() {
