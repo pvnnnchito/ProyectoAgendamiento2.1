@@ -31,6 +31,11 @@ public class Empleado {
     @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Disponibilidad> listaDisponibilidad;
 
+    //Relacion ManyToOne con Negocio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "negocio_id")
+    private Negocio negocio;
+
     //CONSTRUCTORES
 
     public Empleado() {

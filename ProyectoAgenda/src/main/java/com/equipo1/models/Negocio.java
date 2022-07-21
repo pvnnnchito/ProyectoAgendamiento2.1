@@ -25,6 +25,10 @@ public class Negocio {
     @OneToMany(mappedBy = "negocio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Servicio> listaServicios;
 
+    //Relacion OneToMany con Empleado
+    @OneToMany(mappedBy = "negocio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Empleado> listaEmpleados;
+
     public Negocio() {
     }
 

@@ -11,16 +11,6 @@ const initialValues = [
     }
 ]
 
-const autoValues =[
-    {
-        id:'',
-        marca:'',
-        modelo:'',
-        velocidad:'', 
-        color:''
-    }
-]
-
 
 const FormularioServicioComponent = ({servicioAdd, servicioEditado, servicioEdit, setServicioEditado}) => {
     
@@ -31,7 +21,7 @@ const FormularioServicioComponent = ({servicioAdd, servicioEditado, servicioEdit
     
     //2 FUNCIONES USE-EFFECT (se corren al menos una vez al recargar la pag)
     useEffect(
-        //si [servicioEditado] cambia esto se ejecuta:
+        //si [servicioEditado] cambia esto se ejecuta: 
         ()=>{
             //si [servicioEditado] es distinto de null
             if(servicioEditado !== null){
@@ -149,109 +139,6 @@ const FormularioServicioComponent = ({servicioAdd, servicioEditado, servicioEdit
                             placeholder="Nombre del prestador"
                             value={prestadorServicio}
                             name='prestadorServicio'
-                            onChange={handleInputChange}
-                            />
-                            <br/>
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <button type="submit" className="btn btn-primary col-6 me-2 mb-5">{servicioEditado ? "Editar servicio":"Registrar servicio"}</button>
-                            {servicioEditado ? (<button type="button" className="btn btn-warning col-6 mb-5" onClick={()=>setServicioEditado(null)}>Cancelar</button>):''}
-                            
-                        </div>
-                    </form>
-            </>);
-};
-
-const FormularioAutoComponent = ({servicioAdd, servicioEditado, servicioEdit, setServicioEditado}) => {
-    
-    //1 CONSTANTES
-    const [values, setValues] = useState(autoValues);
-    //aquí creamos un objeto que nos permite usar a "values" para capturar los datos de los input
-    const {} = values;
-
-    useEffect( 
-        ()=>{
-        if(autoEditado !== null){
-            setValues(autoEditado)
-        }else{
-            setValues({
-                id:'',
-                marca:'',
-                modelo:'',
-                velocidad:'', 
-                color:''
-            })
-        }
-        }
-        ,[autoEditado]);
-    
-
-
-    return (<>
-            <h2 className="d-flex justify-content-center mb-3">{servicioEditado ? "Edita tu servicio":"Agregar nuevo servicio"}</h2>
-            {/*se crea el onSubmit para que el botón de abajo tenga funcionalidad*/}
-            <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>key</label>
-                            <input
-                            type="text"
-                            className="form-control"
-                            id="key"
-                            placeholder="Key"
-                            value={key}
-                            name='key'
-                            onChange={handleInputChange}
-                            />
-                            <br/>
-                        </div>
-                        <div className="form-group">
-                            <label>Color</label>
-                            <input
-                            type="text"
-                            className="form-control"
-                            id="color"
-                            placeholder="Color auto"
-                            value={color}
-                            name='color'
-                            onChange={handleInputChange}
-                            />
-                            <br/>
-                        </div>
-                        <div className="form-group">
-                            <label>Modelo</label>
-                            <input
-                            type="text"
-                            className="form-control"
-                            id="duracionServicio"
-                            placeholder="Duracion servicio"
-                            value={duracionServicio}
-                            name='duracionServicio'
-                            onChange={handleInputChange}
-                            />
-                            <br/>
-                        </div>
-                        <div className="form-group">
-                            <label>Marca</label>
-                            <input
-                            type="text"
-                            className="form-control"
-                            id="marca"
-                            placeholder="Marca del auto"
-                            value={marca}
-                            name='marca'
-                            onChange={handleInputChange}
-                            />
-                            <br/>
-                        </div>
-                        <div className="form-group">
-                            <label>Velocidad</label>
-                            <input
-                            type="text"
-                            className="form-control"
-                            id="velocidad"
-                            placeholder="velocidad"
-                            value={velocidad}
-                            name='velocidad'
                             onChange={handleInputChange}
                             />
                             <br/>
