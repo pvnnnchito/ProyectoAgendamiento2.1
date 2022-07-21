@@ -14,6 +14,12 @@ import ExplicacionConfiguracionComponent from "./components/ExplicacionConfigura
 
 
 const App = () => {
+<<<<<<< HEAD
+    return(<>
+        <HomeServicioComponent/>
+        
+    </>);
+=======
     return(
     <BrowserRouter>
     <Routes>
