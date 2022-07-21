@@ -1,6 +1,5 @@
 package com.equipo1.services;
 
-import com.equipo1.models.ServicioAgendado;
 import com.equipo1.models.ServicioOfrecido;
 import com.equipo1.repositories.ServicioOfrecidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

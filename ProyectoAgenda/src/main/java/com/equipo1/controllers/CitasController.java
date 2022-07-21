@@ -1,7 +1,6 @@
 package com.equipo1.controllers;
 
 import com.equipo1.models.Citas;
-import com.equipo1.models.ServicioOfrecido;
 import com.equipo1.services.CitasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

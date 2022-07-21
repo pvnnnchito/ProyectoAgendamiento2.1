@@ -9,15 +9,16 @@ public class ServicioOfrecido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //Atributos
     private Long id;
-    private int idCitas; // --> FK idCitas
-    private int idServicio;
 
+    //RELACIONES
+    //Relacion ManyToOne con Citas
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "citas_id")
     private Citas citas;
 
+    //Relacion ManyToOne con Servicio
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "servicios_id")
+    @JoinColumn(name = "servicio_id")
     private Servicio servicio ;
     //constructores
 
@@ -26,10 +27,6 @@ public class ServicioOfrecido {
         super();
     }
 
-    public ServicioOfrecido(int idCitas, int idServicio) {
-        this.idCitas = idCitas;
-        this.idServicio = idServicio;
-    }
 
 //Getter & Setter
 
@@ -42,19 +39,4 @@ public class ServicioOfrecido {
         this.id = id;
     }
 
-    public int getIdCitas() {
-        return idCitas;
-    }
-
-    public void setIdCitas(int idCitas) {
-        this.idCitas = idCitas;
-    }
-
-    public int getIdServicio() {
-        return idServicio;
-    }
-
-    public void setIdServicio(int idServicio) {
-        this.idServicio = idServicio;
-    }
 }

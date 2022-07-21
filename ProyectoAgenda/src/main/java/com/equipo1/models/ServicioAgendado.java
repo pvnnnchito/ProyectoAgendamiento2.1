@@ -11,8 +11,6 @@ public class ServicioAgendado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // --> PK
-    private int idCitas; // --> FK idCitas
-    private int idServicio; //--> FK idServicio
 
 
     //RELACIONES
@@ -32,10 +30,6 @@ public class ServicioAgendado {
     public ServicioAgendado() {
     }
 
-    public ServicioAgendado(int idCitas, int idServicio) {
-        this.idCitas = idCitas;
-        this.idServicio = idServicio;
-    }
 
     //Getter & Setter
 
@@ -48,19 +42,5 @@ public class ServicioAgendado {
         this.id = id;
     }
 
-    public int getidCitas() {
-        return idCitas;
-    }
 
-    public void setidCitas(int idCitas) {
-        this.idCitas = idCitas;
-    }
-
-    public int getidServicio() {
-        return idServicio;
-    }
-
-    public void setidServicio(int idServicio) {
-        this.idServicio = idServicio;
-    }
 }
