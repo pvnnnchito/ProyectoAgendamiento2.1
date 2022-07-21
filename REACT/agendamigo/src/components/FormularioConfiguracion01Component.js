@@ -1,71 +1,19 @@
-import React,{useState, useEffect} from "react";
-
-const initialValues = [
-    {
-        key:'',
-        nombre_pyme:'',
-        numero_contacto:'',
-        rubro:'',
-        numero_empleados:'',
-        direccion:''
-    }
-]
-
-const FormularioConfiguracion01Component = ({conf01Add, conf01Editado, conf01Edit, }) => {
-    const [values, setValues] = useState(initialValues);
-    const {key, nombre_pyme, numero_contacto, rubro, numero_empleados, direccion} = values;
-
-    useEffect(
-        ()=>{
-            if(conf01Editado !== null){
-                setValues(conf01Editado)
-            }else{
-                setValues({
-                    key:'',
-                    nombre_pyme:'',
-                    numero_contacto:'',
-                    rubro:'',
-                    numero_empleados:'',
-                    direccion:''
-                })
-            }
-        }
-        ,[conf01Editado]);
-
-        const handleInputChange=(e)=>{
-
-            const changedFormValue={
-                ...values,
-                [e.target.name]:e.target.value
-            }
-            setValues(changedFormValue)
-        }
-
-        const handleSubmit =(e)=>{
-            e.preventDefault();
-            if(conf01Editado !== null){
-                conf01Edit(values)
-            }else{
-                conf01Add(values)
-            }
-            
-        }
+import React from "react";
 
 
+const FormularioConfiguracion01Component = () => {
+//falta el cosito de progreso (pasos), imagen de agendamigo y el boton + estética + union del paso 1 de conf al 2 y del 2 al 3
     return(
-    <form onSubmit={handleSubmit}>
+    <form>
         <h1>¡Bienvenid@! Para comenzar por favor registre los datos de su pyme:</h1>
         <div>
         <div className="form-group">
-        <label>Nombre de Pyme</label>
+        <label>Key (ocultar?)</label>
         <input
         type="text"
         className="form-control"
         id="key"
         placeholder="Key"
-        value={key}
-        name='key'
-        onChange={handleInputChange}
         />
         <br/>
         </div>
@@ -74,11 +22,8 @@ const FormularioConfiguracion01Component = ({conf01Add, conf01Editado, conf01Edi
         <input
         type="text"
         className="form-control"
-        id="nombre_pyme"
+        id="nombrePyme"
         placeholder="Nombre Pyme"
-        value={nombre_pyme}
-        name='nombre_pyme'
-        onChange={handleInputChange}
         />
         <br/>
         </div>
@@ -87,11 +32,8 @@ const FormularioConfiguracion01Component = ({conf01Add, conf01Editado, conf01Edi
         <input
         type="text"
         className="form-control"
-        id="numero_contacto"
+        id="numeroContacto"
         placeholder="Número contacto"
-        value={numero_contacto}
-        name='numero_contacto'
-        onChange={handleInputChange}
         />
         <br/>
         </div>
@@ -102,9 +44,6 @@ const FormularioConfiguracion01Component = ({conf01Add, conf01Editado, conf01Edi
         className="form-control"
         id="rubro"
         placeholder="Rubro"
-        value={rubro}
-        name='rubro'
-        onChange={handleInputChange}
         />
         <br/>
         </div>
@@ -113,11 +52,8 @@ const FormularioConfiguracion01Component = ({conf01Add, conf01Editado, conf01Edi
         <input
         type="number"
         className="form-control"
-        id="numero_empleados"
+        id="numeroEmpleados"
         placeholder="Número empleados"
-        value={numero_empleados}
-        name='numero_empleados'
-        onChange={handleInputChange}
         ></input>
         <br/>
         </div>
@@ -128,9 +64,6 @@ const FormularioConfiguracion01Component = ({conf01Add, conf01Editado, conf01Edi
         className="form-control"
         id="direccion"
         placeholder="Dirección"
-        value={direccion}
-        name='direccion'
-        onChange={handleInputChange}
         ></input>
         <br/>
         </div>
