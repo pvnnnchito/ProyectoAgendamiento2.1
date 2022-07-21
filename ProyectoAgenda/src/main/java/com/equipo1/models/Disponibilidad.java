@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name="Disponibilidad")
+@Table(name="disponibilidades")
 public class Disponibilidad {
 
     //ATRIBUTOS
