@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/disponibilidad")
+@RequestMapping("/disponibilidades")
 public class DisponibilidadController {
 
     @Autowired

@@ -3,7 +3,7 @@ package com.equipo1.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "servicioAgendado")
+@Table(name = "serviciosAgendados")
 public class ServicioAgendado {
 
     //Atributos
