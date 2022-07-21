@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,17 +20,17 @@ public class ServicioController {
     @Autowired
     ServicioService servicioService;
 
-    //primera ruta, para desplegar el jsp
+    //1. Desplegar
     @RequestMapping("")
     public String servicio(@ModelAttribute("servicio") Servicio servicio){
         return "servicio.jsp";
     }
 
-    //segunda ruta, para pasar el modelo vacio
+    //2. Modelo vacio --> CREATE
     @PostMapping("/registrado")
     public String servicioRegistrado(@ModelAttribute("servicio") Servicio servicio,
-                                     BindingResult result,
-                                     Model model){
+                                    BindingResult result,
+                                    Model model){
         if(result.hasErrors()){
             model.addAttribute("msgError","Ingreso incorrecto de datos");
             return "servicio.jsp";
@@ -45,7 +47,7 @@ public class ServicioController {
         }
     }
 
-    //tercera ruta, para mostrar la tabla de servicios
+    //3. Mostrar tabla de Servicios --> READ
     @RequestMapping("/tabla")
     public String tablaservicios(Model model){
         //copiamos la lista que tenemos arriba, no es necesario volver a crearla
@@ -55,7 +57,7 @@ public class ServicioController {
         return "serviciosRegistrados.jsp";
     }
 
-    //cuarta ruta, creada con el boton para mostrar los datos del objeto editado
+    //4. Ruta del boton EDITAR (nos envía al formulario de ingreso pero en ruta de edicion segun id del objetivo a editar)
     @RequestMapping("/editar/{id}")
     public String editar(@PathVariable("id") Long id, Model model){
 
@@ -64,11 +66,11 @@ public class ServicioController {
         model.addAttribute("servicio",servicio);
         return "editarServicio.jsp";
     }
-    //quinta ruta, para pasar el objeto con los atributos editados a la base de datos
+    //5. Actualiza la base de datos segun los datos editados --> UPDATE
     @PostMapping("/actualizar/{id}")
     public String actualizarServicio(@Valid @ModelAttribute("servicio") Servicio servicio,
-                                     BindingResult result,
-                                     Model model){
+                                    BindingResult result,
+                                    Model model){
         if(result.hasErrors()){
             model.addAttribute("msgError","Ingreso incorrecto de datos");
             return "editarServicio.jsp";
@@ -85,7 +87,7 @@ public class ServicioController {
         }
     }
 
-    //sexta ruta, para eliminar
+    //6. Borra según id - DELETE
     @RequestMapping("/eliminar/{id}")
     public String eliminar(@PathVariable("id") Long id){
         servicioService.eliminarServicio(id);

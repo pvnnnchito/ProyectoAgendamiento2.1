@@ -17,9 +17,14 @@ public class Categoria {
     private Date createdAt;
 
     private Date updatedAt;
+
+    //RELACIONES
+
     //relación OneToMany con Servicio
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Servicio> servicioList;
+    private List<Servicio> listaServicios;
+
+
     //contructores
 
     public Categoria() {

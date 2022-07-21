@@ -22,7 +22,7 @@ public class ServicioAgendadoController {
 
     //PRIMERA url PARA DESPLEGAR JSP
     @RequestMapping("/agendado")
-    public String Agendado(@ModelAttribute("servicioAgendado") ServicioAgendado servicioAgendado) {
+    public String agendado(@ModelAttribute("servicioAgendado") ServicioAgendado servicioAgendado) {
     return "agendado.jsp";
     }
 
