@@ -1,8 +1,8 @@
 package com.equipo1.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Table(name="empleados")
@@ -21,6 +21,15 @@ public class Empleado {
     @Size(min=4, max=15)
     private String apellido;
 
+    //RELACIONES
+
+    //Relacion OneToMany con Citas
+    @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Citas> citaAgendada;
+
+    //Relacion OneToMany con Disponibilidad
+    @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Disponibilidad> listaDisponibilidad;
 
     //CONSTRUCTORES
 
