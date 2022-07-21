@@ -21,7 +21,7 @@ const FormularioServicioComponent = ({servicioAdd, servicioEditado, servicioEdit
     
     //2 FUNCIONES USE-EFFECT (se corren al menos una vez al recargar la pag)
     useEffect(
-        //si [servicioEditado] cambia esto se ejecuta:
+        //si [servicioEditado] cambia esto se ejecuta: 
         ()=>{
             //si [servicioEditado] es distinto de null
             if(servicioEditado !== null){
