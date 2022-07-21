@@ -3,7 +3,7 @@ package com.equipo1.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "servicioAgendado")
+@Table(name = "serviciosAgendados")
 public class ServicioAgendado {
 
     //Atributos
@@ -11,18 +11,25 @@ public class ServicioAgendado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // --> PK
-    private int idAgendado; // --> FK idCitas
-    private int idCalendario; //--> FK idServicio
+
+
+    //RELACIONES
+
+    //Relacion ManyToOne con Citas
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "citas_id")
+    private Citas citas;
+
+    //Relacion ManyToOne con Servicio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "servicio_id")
+    private Servicio servicio ;
 
     //Constructores
 
     public ServicioAgendado() {
     }
 
-    public ServicioAgendado(int idAgendado, int idCalendario) {
-        this.idAgendado = idAgendado;
-        this.idCalendario = idCalendario;
-    }
 
     //Getter & Setter
 
@@ -35,19 +42,5 @@ public class ServicioAgendado {
         this.id = id;
     }
 
-    public int getIdAgendado() {
-        return idAgendado;
-    }
 
-    public void setIdAgendado(int idAgendado) {
-        this.idAgendado = idAgendado;
-    }
-
-    public int getIdCalendario() {
-        return idCalendario;
-    }
-
-    public void setIdCalendario(int idCalendario) {
-        this.idCalendario = idCalendario;
-    }
 }

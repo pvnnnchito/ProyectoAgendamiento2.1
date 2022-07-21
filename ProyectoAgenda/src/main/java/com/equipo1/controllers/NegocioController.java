@@ -1,7 +1,7 @@
 package com.equipo1.controllers;
 
-import com.equipo1.models.Disponibilidad;
-import com.equipo1.services.DisponibilidadService;
+import com.equipo1.models.Negocio;
+import com.equipo1.services.NegocioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,78 +15,83 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/disponibilidades")
-public class DisponibilidadController {
-
+@RequestMapping("/negocio")
+public class NegocioController {
     @Autowired
-    DisponibilidadService disponibilidadService;
+    NegocioService negocioService;
 
+    //1era ruta - Desplegar el jsp
     @RequestMapping("")
-    public String disponibilidad(@ModelAttribute("disponibilidad") Disponibilidad disponibilidad){
-        return "servicio.jsp";
+    public String negocio(@ModelAttribute("negocio") Negocio negocio){
+        return "negocio.jsp";
     }
 
-    @PostMapping("/registro")
-    public String disponibilidadRegistrada(@ModelAttribute("disponibilidad") Disponibilidad disponibilidad,
+    //2da ruta - pasar modelo vacio
+    @PostMapping("/registrado")
+    public String negocioRegistrado(@ModelAttribute("negocio") Negocio negocio,
                                     BindingResult result,
                                     Model model){
         if(result.hasErrors()){
             model.addAttribute("msgError","Ingreso incorrecto de datos");
-            return "disponibilidad.jsp";
+            return "negocio.jsp";
         }else {
             //capturamos el objeto con los atributos completos
             //y lo pasamos a service para que lo guarde
-            disponibilidadService.saveDisponibilidad(disponibilidad);
+            negocioService.guardarNegocio(negocio);
 
             //crear la lista de objetos para poderla mostrar en el jsp
-            List<Disponibilidad> listaDisponibilidad = disponibilidadService.findAll();
+            List<Negocio> listaNegocios = negocioService.findAll();
             //con MODEL es que pasamos cosas al JSP
-            model.addAttribute("disponibilidadRegistradas",listaDisponibilidad);
-            return "disponibilidadRegistradas.jsp";
+            model.addAttribute("negociosRegistrados",listaNegocios);
+            return "negociosRegistrados.jsp";//tenemos que agregar la lista de servicios luego
         }
     }
 
-    @RequestMapping("/tabla")
-    public String tablaDisponibilidad(Model model){
+    //tercera ruta, para mostrar la tabla de servicios
+    @RequestMapping("/lista")
+    public String listaNegocios(Model model){
         //copiamos la lista que tenemos arriba, no es necesario volver a crearla
-        List<Disponibilidad> listaDisponibilidad = disponibilidadService.findAll();
+        List<Negocio> listaNegocios = negocioService.findAll();
         // y con model pasamos la lista al jsp
-        model.addAttribute("disponibilidadRegistradas",listaDisponibilidad);
-        return "disponibilidadRegistradas.jsp";
+        model.addAttribute("negociosRegistrados",listaNegocios);
+        return "negociosRegistrados.jsp";
     }
 
+    //cuarta ruta, creada con el boton para mostrar los datos del objeto editado
     @RequestMapping("/editar/{id}")
     public String editar(@PathVariable("id") Long id, Model model){
 
         //buscamos el servicio por su id y lo llamamos de alguna forma en esta función
-        Disponibilidad disponibilidad = disponibilidadService.buscarId(id);
-        model.addAttribute("disponibilidad",disponibilidad);
-        return "editarDisponibilidad.jsp";
+        Negocio negocio = negocioService.buscarId(id);
+        model.addAttribute("negocio",negocio);
+        return "editarNegocio.jsp";
     }
 
+    //quinta ruta, para pasar el objeto con los atributos editados a la base de datos
     @PostMapping("/actualizar/{id}")
-    public String actualizarDisponibilidad(@Valid @ModelAttribute("disponibilidad") Disponibilidad disponibilidad,
+    public String actualizarNegocio(@Valid @ModelAttribute("negocio") Negocio negocio,
                                      BindingResult result,
                                      Model model){
         if(result.hasErrors()){
             model.addAttribute("msgError","Ingreso incorrecto de datos");
-            return "editarDisponibilidad.jsp";
+            return "editarNegocio.jsp";
         }else {
             //capturamos el objeto con los atributos completos
             //y lo pasamos a service para que lo guarde
-            disponibilidadService.saveDisponibilidad(disponibilidad);
+            negocioService.guardarNegocio(negocio);
 
             //crear la lista de objetos para poderla mostrar en el jsp
-            List<Disponibilidad> listaDisponibilidad = disponibilidadService.findAll();
+            List<Negocio> listaNegocios = negocioService.findAll();
             //con MODEL es que pasamos cosas al JSP
-            model.addAttribute("disponibilidadRegistradas",listaDisponibilidad);
-            return "redirect:/disponibilidad/tabla";//tenemos que agregar la lista de servicios luego
+            model.addAttribute("negociosRegistrados",listaNegocios);
+            return "redirect:/negocio/lista";//tenemos que agregar la lista de servicios luego
         }
     }
 
+    //sexta ruta, para eliminar
     @RequestMapping("/eliminar/{id}")
     public String eliminar(@PathVariable("id") Long id){
-        disponibilidadService.eliminarDisponibilidad(id);
-        return "redirect:/servicio/tabla";
+        negocioService.eliminarNegocio(id);
+        return "redirect:/Negocio/lista";
     }
 }

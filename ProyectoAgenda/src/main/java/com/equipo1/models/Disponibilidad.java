@@ -1,24 +1,31 @@
 package com.equipo1.models;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 
-//@Entity
-//@Table(name="usuarios")
+@Entity
+@Table(name="disponibilidades")
 public class Disponibilidad {
 
     //ATRIBUTOS
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int empleado_id;
     private Timestamp tiempoInicio;
     private Timestamp tiempoFinal;
+
+    //RELACIONES
+    //Relacion ManyToOne con Empleados
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "empleado_id")
+    private Empleado empleado;
 
     //CONSTRUCTORES
     public Disponibilidad() {
     }
 
-    public Disponibilidad(int id, int empleado_id, Timestamp tiempoInicio, Timestamp tiempoFinal) {
+    public Disponibilidad(int id, Timestamp tiempoInicio, Timestamp tiempoFinal) {
         this.id = id;
-        this.empleado_id = empleado_id;
         this.tiempoInicio = tiempoInicio;
         this.tiempoFinal = tiempoFinal;
     }
@@ -31,14 +38,6 @@ public class Disponibilidad {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getEmpleado_id() {
-        return empleado_id;
-    }
-
-    public void setEmpleado_id(int empleado_id) {
-        this.empleado_id = empleado_id;
     }
 
     public Timestamp getTiempoInicio() {
