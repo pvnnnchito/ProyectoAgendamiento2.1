@@ -2,6 +2,7 @@ import React from "react";
 import logoFB from "../assets/img/logoFB.png"
 import logoIG from "../assets/img/logoIG.jpeg"
 
+
 const IniciarSesionConComponent = () => {
     return(
         <div className="container" 
