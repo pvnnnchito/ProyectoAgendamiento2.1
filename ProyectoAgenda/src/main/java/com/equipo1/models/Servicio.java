@@ -14,6 +14,8 @@ public class Servicio {
     private Long id;
     private String nombreServicio;
     private int duracion;
+
+    private int precio;
     @Column(updatable = false) //nos indica que esta columna no se puede actualizar por el sistema.
     private Date createdAt;
     private Date updatedAt;
@@ -44,14 +46,17 @@ public class Servicio {
     }
 
     //constructor con parámetros
-    public Servicio(Long id, String nombreServicio, int duracion) {
+
+    public Servicio(Long id, String nombreServicio, int duracion, int precio) {
         this.id = id;
         this.nombreServicio = nombreServicio;
         this.duracion = duracion;
+        this.precio = precio;
     }
 
 
     //Getter & Setter
+
 
     public Long getId() {
         return id;
@@ -75,6 +80,14 @@ public class Servicio {
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
     //Insertara en el atributo la fecha antes de insertar en la BD.

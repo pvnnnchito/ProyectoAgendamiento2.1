@@ -24,7 +24,8 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Telefono</th>
         </tr>
         </thead>
         <c:forEach var="empleado" items="${empleadosCapturados}" >
@@ -32,7 +33,8 @@
                 <th>id</th>
                 <th scope="row">${empleado.id}</th>
                 <td>${empleado.nombre}</td>
-                <td>${empleado.apellido}</td>
+                <td>${empleado.correo}</td>
+                <td>${empleado.telefono}</td>
                 <td><a class="btn btn-warning" href="/empleado/editar/${empleado.id}" role="button">Editar</a></td>
                 <td><a class="btn btn-danger" href="/empleado/eliminar/${empleado.id}" role="button">Eliminar</a></td>
             </tr>

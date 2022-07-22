@@ -1,8 +1,6 @@
 package com.equipo1.api;
 
-import com.equipo1.models.Cliente;
 import com.equipo1.models.Negocio;
-import com.equipo1.services.ClienteService;
 import com.equipo1.services.NegocioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
