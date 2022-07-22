@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import HomeServicioComponent from "./components/HomeServicioComponent";
+import OnboardingComponent from "./components/OnboardingComponent";
+import ExplicacionConfiguracionComponent from "./components/ExplicacionConfiguracionComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+
+
+const App = () => {
+
+    return(
+    <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<OnboardingComponent/>}></Route>
+        <Route path='/Paso0config' element={<ExplicacionConfiguracionComponent/>}></Route>
+        <Route path='/HomeServicio' element={<HomeServicioComponent/>}></Route>
+
+    </Routes>
+    </BrowserRouter>);
+};
 
 export default App;

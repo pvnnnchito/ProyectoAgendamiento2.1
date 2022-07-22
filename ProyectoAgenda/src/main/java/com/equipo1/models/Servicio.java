@@ -33,7 +33,10 @@ public class Servicio {
     @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ServicioOfrecido> listaOfrecidos;
 
-
+    //Relacion ManyToOne con Negocio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "negocio_id")
+    private Negocio negocio;
 
     //constructor vacío
     public Servicio() {

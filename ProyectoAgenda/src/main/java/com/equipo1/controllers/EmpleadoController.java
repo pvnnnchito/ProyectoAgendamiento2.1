@@ -20,15 +20,17 @@ public class EmpleadoController {
     @Autowired
     EmpleadoService empleadoService;
 
+    //1. Desplegar
     @RequestMapping("")
     public String inicioEmpleado(@ModelAttribute("empleado") Empleado empleado) {
         return "empleado.jsp";
     }
 
+    //2. Modelo vacio --> CREATE
     @PostMapping("/guardar")
     public String guardarEmpleado(@Valid @ModelAttribute("empleado") Empleado empleado,
-            BindingResult result,
-            Model model) {
+                                BindingResult result,
+                                Model model) {
         if (result.hasErrors()) {
             model.addAttribute("msgError", "Debe ingresar los datos correctamente");
             return "empleado.jsp";
@@ -38,7 +40,7 @@ public class EmpleadoController {
 
             List<Empleado> listaEmpleados = empleadoService.findAll();
             model.addAttribute("empleadosCapturados", listaEmpleados);
-            return "mostrarEmpleado.jsp";
+            return "empleadoRegistrado.jsp";
         }
 
     }
@@ -66,9 +68,9 @@ public class EmpleadoController {
 
     @PostMapping("/actualizar/{id}")
     public String actualizarEmpleado(@PathVariable("id") Long id,
-            @Valid @ModelAttribute("empleado") Empleado empleado,
-            BindingResult result,
-            Model model) {
+                                    @Valid @ModelAttribute("empleado") Empleado empleado,
+                                    BindingResult result,
+                                    Model model) {
         if (result.hasErrors()) {
             model.addAttribute("msgError", "Datos Erroneos");
             return "editarEmpleados.jsp";
