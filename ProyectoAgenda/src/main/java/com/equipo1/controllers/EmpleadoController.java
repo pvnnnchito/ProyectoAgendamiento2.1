@@ -40,7 +40,7 @@ public class EmpleadoController {
 
             List<Empleado> listaEmpleados = empleadoService.findAll();
             model.addAttribute("empleadosCapturados", listaEmpleados);
-            return "empleadoRegistrado.jsp";
+            return "msotrarEmpleado.jsp";
         }
 
 

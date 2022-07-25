@@ -1,4 +1,4 @@
-import React,{useCallback} from "react";
+import React from "react";
 import {useNavigate} from 'react-router-dom'
 //cosas importantes para navegar entre páginas^
 
@@ -11,7 +11,7 @@ const OnboardingComponent = () => {
     
     const navigate = useNavigate();
     
-    const handleOnClick = useCallback(()=> navigate('/Paso0config', {replace:true}, [navigate]))
+    const handleOnClick = (()=> navigate('/registroingreso', {replace:true}, [navigate]))
     
     return (<>
     

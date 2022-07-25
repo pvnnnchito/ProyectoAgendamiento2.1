@@ -23,9 +23,15 @@
         <form:label path="nombre">Nombre:</form:label>
         <form:input path="nombre" placeholder="Ingrese su nombre"/>
         <br>
-        <form:label path="apellido">Apellido:</form:label>
-        <form:input path="apellido" placeholder="Ingrese su apellido"/>
+        <form:label path="correo">Correo:</form:label>
+        <form:input path="correo" placeholder="Ingrese su correo"/>
         <br>
+        <form:label path="telefono">Telefono:</form:label>
+        <form:input path="telefono" placeholder="Ingrese su telefono"/>
+        <br>
+
+
+
         <button type="submit">Guardar Empleado</button>
     </form:form>
 </div>

@@ -35,6 +35,9 @@
         <form:label path="nombreServicio" class="form-label">Nombre del servicio: </form:label>
         <form:input path="nombreServicio" class="form-control"/>
         <br> <!-- saldo de linea -->
+        <form:label path="precio" class="form-label">Precio: </form:label>
+        <form:input type="text" path="precio" class="form-control"/>
+        <br>
         <form:label path="duracion" class="form-label">Duración del servicio en mins.: </form:label>
         <form:input type="number" path="duracion" class="form-control"/>
         <br>

@@ -1,9 +1,7 @@
 package com.equipo1.api;
 
 import com.equipo1.models.Disponibilidad;
-import com.equipo1.models.Negocio;
 import com.equipo1.services.DisponibilidadService;
-import com.equipo1.services.NegocioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
