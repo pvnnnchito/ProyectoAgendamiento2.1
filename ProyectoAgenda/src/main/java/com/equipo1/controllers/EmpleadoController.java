@@ -43,7 +43,6 @@ public class EmpleadoController {
             return "msotrarEmpleado.jsp";
         }
 
-
     }
 
     @RequestMapping("/mostrar")
@@ -77,7 +76,7 @@ public class EmpleadoController {
             return "editarEmpleados.jsp";
         } else {
 
-            empleado.setId(id);//Ver
+            empleado.setId(id);// Ver
             empleadoService.registroEmpleado(empleado);
             return "redirect:/empleado/mostrar";
         }
@@ -85,10 +84,3 @@ public class EmpleadoController {
     }
 
 }
-
-
-
-
-
-
-
