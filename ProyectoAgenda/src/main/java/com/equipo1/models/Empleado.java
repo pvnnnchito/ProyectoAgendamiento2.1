@@ -18,8 +18,14 @@ public class Empleado {
     @Size(min=4, max=15)
     private String nombre;
 
-    @Size(min=4, max=15)
-    private String apellido;
+    private String correo;
+
+    private Integer telefono;
+
+    private String password;
+
+
+
 
     //RELACIONES
 
@@ -41,25 +47,11 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String nombre, String apellido) {
+    public Empleado(String nombre, String correo, Integer telefono, String password) {
         this.nombre = nombre;
-        this.apellido = apellido;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.password = password;
     }
 
     public Long getId() {
@@ -70,5 +62,35 @@ public class Empleado {
         this.id = id;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public Integer getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(Integer telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

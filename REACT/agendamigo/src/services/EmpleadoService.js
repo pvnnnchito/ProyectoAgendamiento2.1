@@ -15,7 +15,7 @@ const eliminarEmpleado=async(id)=>{
 }
 
 /* Guardado de datos Empleado */
-const guardarEmpleado =(empleado)=>{
+const guardarEmpleado =async(empleado)=>{
     const res = await axios.post(baseUrl + "/guardar", empleado);
     return res.data;
 }

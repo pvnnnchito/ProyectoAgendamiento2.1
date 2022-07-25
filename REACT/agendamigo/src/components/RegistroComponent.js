@@ -2,7 +2,7 @@ import React from "react";
 
 const RegistroComponent = () => {
     return(
-        <div className="container" style={{width: '50%', marginBottom: '30px'}}>
+        <div className="container" style={{width: '', marginBottom: '30px'}}>
         <form> 
             <div className="from-group">
                 <label>Nombre Completo: </label>
