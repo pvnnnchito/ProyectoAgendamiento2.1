@@ -5,7 +5,8 @@ import OnboardingComponent from "./components/OnboardingComponent";
 import ExplicacionConfiguracionComponent from "./components/ExplicacionConfiguracionComponent";
 import PymeRegistroComponent from "./components/PymeRegistroComponent";
 import ContactoComponent from "./components/ContactoComponent";
-import RegistroOIngresoComponent from "./components/RegistroOIngresoComponent"
+import RegistroOIngresoComponent from "./components/RegistroOIngresoComponent";
+import FormularioConfiguracion01Component from "./components/FormularioConfiguracion01Component";
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/paso0config' element={<ExplicacionConfiguracionComponent/>}></Route>
         <Route path='/HomeServicio' element={<HomeServicioComponent/>}></Route>
         <Route path="" element={<OnboardingComponent/>} />
+        <Route path='/paso1config' element={<FormularioConfiguracion01Component/>}></Route>
 
     </Routes>
     </BrowserRouter>);
