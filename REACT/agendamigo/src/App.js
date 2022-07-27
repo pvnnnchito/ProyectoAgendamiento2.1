@@ -8,10 +8,10 @@ import ExplicacionConfiguracionComponent from "./components/ExplicacionConfigura
 
 
 const App = () => {
-    return(<>
+    return(
         <HomeServicioComponent/>
         
-    </>);
+    )
 };
 
 export default App;
