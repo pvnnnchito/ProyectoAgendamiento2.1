@@ -22,7 +22,7 @@ const App = () => {
         <Route path='/pymeregistro' element={<PymeRegistroComponent/>}></Route>
         <Route path='/paso0config' element={<ExplicacionConfiguracionComponent/>}></Route>
         <Route path='/HomeServicio' element={<HomeServicioComponent/>}></Route>
-        <Route path="" element={<OnboardingComponent/>} />
+        <Route path='' element={<OnboardingComponent/>} />
 
     </Routes>
     </BrowserRouter>);
