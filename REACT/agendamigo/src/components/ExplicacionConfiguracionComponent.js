@@ -11,7 +11,7 @@ const ExplicacionConfiguracionComponent = () => {
     
     const navigate = useNavigate();
 
-    const handleOnClick = useCallback(()=> navigate('/', {replace:true}, [navigate]))
+    const handleOnClick = useCallback(()=> navigate('/HomeEmpleado', {replace:true}, [navigate]))
 
     return (<>
     <body>

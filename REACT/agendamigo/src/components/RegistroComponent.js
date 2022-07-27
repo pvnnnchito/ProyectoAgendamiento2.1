@@ -1,9 +1,31 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 
-const RegistroComponent = () => {
+const RegistroComponent = ({guardarEmpleado}) => {
+
+    const empleadoValues =[
+        {
+        id:'',
+        nombre:'',
+        correo:'',
+        numeroContacto:'', 
+        contraseña:''
+    }
+    ]
+
+    const [values, setValues] = useState(empleadoValues);
+    const {nombre, correo, numeroContacto, contraseña}= values;
+
+    
+    const handleSubmit =(e)=>{
+        e.preventDefault()
+        guardarEmpleado(values)
+        
+    }
+
+
     return(
         <div className="container" style={{width: '', marginBottom: '30px'}}>
-        <form> 
+        <form onSubmit={handleSubmit}> 
             <div className="from-group">
                 <label>Nombre Completo: </label>
                 <input

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { eliminarEmpleado, getAllEmpleado } from "../component/EmpleadoService";
+import { eliminarEmpleado, getAllEmpleado } from "../services/EmpleadoService";
 import { AgendaEmpleadosComponent } from "./AgendaComponent";
 import empleadoImagen from "../assets/Empleado.svg"
 
@@ -32,6 +32,8 @@ const EmpleadoAgendaComponent=()=>{
         await eliminarEmpleado(id)
         setAgendaEmpleados(await getAllEmpleado());
     }
+
+    
 
     return(
         <>

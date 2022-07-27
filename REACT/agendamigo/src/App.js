@@ -6,6 +6,7 @@ import ExplicacionConfiguracionComponent from "./components/ExplicacionConfigura
 import PymeRegistroComponent from "./components/PymeRegistroComponent";
 import ContactoComponent from "./components/ContactoComponent";
 import RegistroOIngresoComponent from "./components/RegistroOIngresoComponent"
+import EmpleadoAgendaComponent from "./components/EmpleadoAgendaComponent";
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/pymeregistro' element={<PymeRegistroComponent/>}></Route>
         <Route path='/paso0config' element={<ExplicacionConfiguracionComponent/>}></Route>
         <Route path='/HomeServicio' element={<HomeServicioComponent/>}></Route>
+        <Route path='/HomeEmpleado' element={<EmpleadoAgendaComponent/>}></Route>
         <Route path="" element={<OnboardingComponent/>} />
 
     </Routes>
