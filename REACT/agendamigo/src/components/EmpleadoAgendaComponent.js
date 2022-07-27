@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { eliminarEmpleado, getAllEmpleado } from "../component/EmpleadoService";
 import { AgendaEmpleadosComponent } from "./AgendaComponent";
 import empleadoImagen from "../assets/Empleado.svg"
-
+import {getAllEmpleado, eliminarEmpleado, guardarEmpleado} from "../services/EmpleadoService"
 
 const initialAgendaEmpleado=[
     {
@@ -11,7 +11,6 @@ const initialAgendaEmpleado=[
         correo:"",
         telefono:"",
         password:""
-        
     }
 ]
 
@@ -31,6 +30,11 @@ const EmpleadoAgendaComponent=()=>{
     const empleadoDelete = async(id) => {
         await eliminarEmpleado(id)
         setAgendaEmpleados(await getAllEmpleado());
+    }
+
+    const empleadoAdd = async(empleado) =>{
+        await guardarEmpleado(empleado)
+        setAgendaEmpleados(await getAllEmpleado())
     }
 
     return(
