@@ -8,22 +8,10 @@ import ExplicacionConfiguracionComponent from "./components/ExplicacionConfigura
 
 
 const App = () => {
-<<<<<<< HEAD
     return(<>
         <HomeServicioComponent/>
         
     </>);
-=======
-    return(
-    <BrowserRouter>
-    <Routes>
-        <Route path='/' element={<OnboardingComponent/>}></Route>
-        <Route path='/Paso0config' element={<ExplicacionConfiguracionComponent/>}></Route>
-        <Route path='/HomeServicio' element={<HomeServicioComponent/>}></Route>
-
-    </Routes>
-    </BrowserRouter>);
->>>>>>> main
 };
 
 export default App;
