@@ -33,6 +33,7 @@
             <th scope="col">#</th>
             <th scope="col">Nombre del servicio:</th>
             <th scope="col">Duración en mins.:</th>
+            <th scope="col">Precio:</th>
         </tr>
         </thead>
         <tbody>
@@ -42,19 +43,11 @@
                 <th scope="row">${servicio.id}</th>
                 <td>${servicio.nombreServicio}</td>
                 <td>${servicio.duracion}</td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <td><a class="btn btn-warning" href="/servicio/editar/${servicio.id}" role="button">Editar</a></td>
-                <td><a class="btn btn-danger" href="/servicio/eliminar/${servicio.id}" role="button">Eliminar</a></td>
+                <td>${servicio.precio}</td>
 
-=======
                 <td><a class="btn btn-warning" href="editar/${servicio.id}" role="button">Editar</a></td>
                 <td><a class="btn btn-danger" href="eliminar/${servicio.id}" role="button">Eliminar</a></td>
->>>>>>> main
-=======
-                <td><a class="btn btn-warning" href="editar/${servicio.id}" role="button">Editar</a></td>
-                <td><a class="btn btn-danger" href="eliminar/${servicio.id}" role="button">Eliminar</a></td>
->>>>>>> main
+
             </tr>
         </c:forEach>
 

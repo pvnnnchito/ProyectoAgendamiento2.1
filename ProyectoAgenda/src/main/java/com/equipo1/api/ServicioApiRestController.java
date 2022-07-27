@@ -1,10 +1,6 @@
 package com.equipo1.api;
 
-import com.equipo1.models.Cliente;
-import com.equipo1.models.Empleado;
 import com.equipo1.models.Servicio;
-import com.equipo1.services.ClienteService;
-import com.equipo1.services.EmpleadoService;
 import com.equipo1.services.ServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
