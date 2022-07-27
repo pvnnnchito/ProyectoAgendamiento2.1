@@ -24,7 +24,7 @@ public class EmpleadoApiRestController {
     }
 
     @PostMapping(value="/guardar")
-    public ResponseEntity<Empleado> registrarEmpleado(@RequestBody Empleado empleado){
+    public ResponseEntity<Empleado> guardarEmpleado(@RequestBody Empleado empleado){
         empleadoService.registroEmpleado(empleado);
         return new ResponseEntity<Empleado>(empleado, HttpStatus.OK);
     }
