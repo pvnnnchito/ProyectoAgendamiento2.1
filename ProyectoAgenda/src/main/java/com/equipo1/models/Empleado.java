@@ -20,7 +20,7 @@ public class Empleado {
 
     private String correo;
 
-    private Integer telefono;
+    private String telefono;
 
     private String password;
 
@@ -47,7 +47,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String nombre, String correo, Integer telefono, String password) {
+    public Empleado(String nombre, String correo, String telefono, String password) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
@@ -78,11 +78,11 @@ public class Empleado {
         this.correo = correo;
     }
 
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

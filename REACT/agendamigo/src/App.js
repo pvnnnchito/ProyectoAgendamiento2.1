@@ -10,7 +10,6 @@ import RegistroOIngresoComponent from "./components/RegistroOIngresoComponent"
 
 
 
-
 const App = () => {
 
     return(
@@ -23,6 +22,9 @@ const App = () => {
         <Route path='/paso0config' element={<ExplicacionConfiguracionComponent/>}></Route>
         <Route path='/HomeServicio' element={<HomeServicioComponent/>}></Route>
         <Route path="" element={<OnboardingComponent/>} />
+
+
+
 
     </Routes>
     </BrowserRouter>);
